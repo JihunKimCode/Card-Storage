@@ -1,0 +1,485 @@
+:root{
+    --background: #fff;
+    --text: #000;
+    --border: #000;
+    --button: #000;
+    --button-icon: #fff;
+    --footer: #ccc;
+    --gray-hover: #e2e2e2;
+    --gray: #ccc;
+    --light-gray: #f0f0f0;
+    --white: #fff;
+    --black: #000;
+    --popup: rgba(0, 0, 0, 0.7);
+    --error: red;
+    --dark-gray: #aaa;
+    --clear-button-hover: rgba(169, 169, 169, 0.5);
+    --clear-button-active: rgba(169, 169, 169, 0.7);
+}
+
+.dark-mode {
+    --background: #121212;
+    --text: #fff;
+    --border: #c2c2c2;
+    --button: #fff;
+    --button-icon: #000;
+    --footer: #a6a6a6;
+    --gray-hover: #e2e2e2;
+    --gray: #ccc;
+    --light-gray: #f0f0f0;
+    --white: #fff;
+    --black: #000;
+    --popup: rgba(0, 0, 0, 0.7);
+    --error: red;
+    --dark-gray: #aaa;
+    --clear-button-hover: rgba(169, 169, 169, 0.5);
+    --clear-button-active: rgba(169, 169, 169, 0.7);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    background-color: var(--background);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+/* Scroll Bar Width */
+::-webkit-scrollbar {
+    scroll-behavior: smooth;
+    height: calc(100% - 3em);
+    overflow-y: auto;
+    width: 10px;
+    height: 10px;
+}
+
+/* Scroll Bar Track */
+::-webkit-scrollbar-track {
+    border: none;
+    border-radius: 10px;
+}
+
+/* Scroll Bar Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--footer);  
+    border-radius: 20px;
+}
+
+/* Scroll Bar Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-hover);  
+}
+
+h1 {
+    margin: 0;
+}
+
+h1 a{
+    color: var(--text);
+    text-decoration: none;
+}
+
+/* Github Button */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    color: var(--button-icon);
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn.btn-github, .btn.btn-dark {
+    background-color: var(--button);
+}
+
+.btn.btn-github:hover, .btn.btn-dark:hover {
+    color: var(--gray);
+}
+
+#sortOrder, #rarityFilter{
+    padding: 7px;    
+    background: var(--white);
+    color: var(--black);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--border);
+    box-sizing: border-box;
+    cursor: pointer;
+    font-family: 'NanumB', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 6px;
+    overflow: hidden;
+    width: 125px;
+
+    transition: height .4s ease;
+}
+
+#sortOrder option, #rarityFilter option{
+    font-size: 12px;
+}
+
+.searchTools{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    float: right;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    float: right;
+}
+
+.filter-container input[type="text"]{
+    margin-left: 5px;
+}
+
+.filter-container input[type="text"]{
+    padding: 6px;
+    font-size: 17px;
+    border: none;
+    width: 175px;
+    border-top: 2px solid var(--border);
+    border-left: 2px solid var(--border);
+    border-bottom: 2px solid var(--border);  
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#fetchButton {
+    width: 32px;
+    float: right;
+    padding: 6px 0px;
+    margin-right: 0px;
+    background: var(--gray);
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    color: var(--white);
+    border-top: 2px solid var(--border);
+    border-right: 2px solid var(--border);
+    border-bottom: 2px solid var(--border);  
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#fetchButton:hover{
+    background-color: var(--dark-gray);
+}
+
+.search-options {
+    display: flex;
+    float: right;
+    margin-bottom: 10px;
+}
+
+.search-options button {
+    padding: 5px 10px;
+    border: none;
+    background-color: var(--light-gray);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*No margin for last item*/
+.search-options button:not(:last-child) {
+    margin-right: 10px;
+}
+
+.search-options button.active {
+    background-color: var(--gray);
+}
+
+
+.searcher {
+    position: relative;
+}
+
+.search-input-container {
+    position: relative;
+    display: inline-block;
+}
+
+#clearButton {
+    display: none;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    background-color: transparent;
+
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+}
+
+#clearButton:hover {
+    background-color: var(--clear-button-hover);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+#clearButton:active {
+    background-color: var(--clear-button-active);
+    transition: background-color 0.3s ease;
+}
+
+#clearButton i {
+    font-size: 12px; /* Adjust according to the button size */
+}
+
+#output {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    justify-items: center;
+}
+
+.card {
+    border: none;
+    border-radius: 5px;
+    background-color: var(--background);
+    text-align: center;
+    width: 200px;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.card p{
+    margin-block-start: 7px;
+    margin-block-end: 3px;
+    color: var(--text);
+}
+
+.card a{
+    text-decoration: none;
+    color: var(--text);
+}
+
+.error {
+    color: var(--error);
+}
+
+/* Popup Styles */
+#popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--popup);
+    z-index: 9999;
+    overflow: auto;
+}
+
+#popupImage {
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#caption {
+    display: block;
+    color: var(--white);
+    text-align: center;
+    margin-top: 20px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: var(--white);
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: var(--gray);
+}
+
+footer {
+    font-size: 16px;
+    background-color: var(--footer);
+    color: var(--white);
+    text-align: left;
+    margin: 15px 0px 0px 0px;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+footer a{
+    color: var(--white);
+    text-decoration: underline;
+}
+
+footer a:hover{
+    color: var(--gray-hover);
+}
+
+.footicons{
+    font-size: 31px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: var(--white);
+}
+
+.footicons .btn {
+    margin-right: 10px;
+}
+
+.footerContent{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#scrollTop{
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--white);
+}
+
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--footer);
+    color: var(--white);
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+#scrollTopBtn:hover {
+    background-color: var(--gray-hover);
+}
+
+@media (min-width: 767px) and (max-width: 977px) {
+    h1{
+        width: 30%;
+        font-size: 28px;
+    }
+    .searchTools{
+        width: 70%
+    }
+    .filter-container{
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 10px;
+    }
+
+    h1{
+        font-size: 28px;
+    }
+
+    .btn{
+        padding: 4px;
+    }
+
+    .searchTools{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        float: right;
+        margin-top: 5px;
+    }
+
+    .search-options{
+        width: 100%;
+        justify-content: flex-end;
+        margin-bottom: 2px;
+    }
+
+    .filter-container {
+        flex-direction: column-reverse;
+        width: 100%;
+        align-items: flex-end;
+    }
+
+    .filter-container select, .filter-container input[type="text"], .filter-container button {
+        margin: 5px 0;
+    }
+
+    #clearButton {
+        top: 37%;
+    }
+
+    #sortOrder, #rarityFilter{
+        margin-right: 0px;
+    }
+
+    #output{
+        width: 100%;
+        grid-template-columns: repeat(auto-fill, minmax(49%, 1fr));
+        row-gap: 5px;
+        column-gap: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .card{
+        width: 85%;
+    }
+
+    h3{
+        height: 30px;
+    }
+
+    footer {
+        font-size: 12px;
+        padding-left: 10px;
+    }    
+    
+    .footicons{
+        font-size: 28px;
+    }    
+}
