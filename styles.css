@@ -1,5 +1,6 @@
 :root{
     --background: #fff;
+    --loading-bar: #f3f3f3;
     --text: #000;
     --border: #000;
     --button: #000;
@@ -13,12 +14,11 @@
     --popup: rgba(0, 0, 0, 0.7);
     --error: red;
     --dark-gray: #aaa;
-    --clear-button-hover: rgba(169, 169, 169, 0.5);
-    --clear-button-active: rgba(169, 169, 169, 0.7);
 }
 
 .dark-mode {
     --background: #121212;
+    --loading-bar: #000;
     --text: #fff;
     --border: #c2c2c2;
     --button: #fff;
@@ -32,36 +32,40 @@
     --popup: rgba(0, 0, 0, 0.7);
     --error: red;
     --dark-gray: #aaa;
-    --clear-button-hover: rgba(169, 169, 169, 0.5);
-    --clear-button-active: rgba(169, 169, 169, 0.7);
 }
 
 body {
     font-family: Arial, sans-serif;
+    background-color: var(--background);
     padding: 0;
     margin-left: 5px;
     margin-right: 5px;
-  }
+}
 
-  h1{
+h1{
     margin-left: 20px;
-  }
-  
-  .card {
+}
+
+#controls {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+#filters, #sorting {
+    display: flex;
+    gap: 10px;
+}
+
+.card {
     border: none;
     border-radius: 5px;
     background-color: var(--background);
     text-align: center;
     width: 200px;
-  }
-    
-  .card img {
-      max-width: 100%;
-      height: auto;
-      cursor: pointer;
-  }
+}
 
-  .card img {
+.card img {
     max-width: 100%;
     height: auto;
     cursor: pointer;
@@ -78,26 +82,49 @@ body {
     color: var(--text);
 }
 
-  .scroll-top {
+.scroll-top {
     position: fixed;
     bottom: 10px;
     right: 10px;
     padding: 10px;
-    background: #000;
+    background: var(--footer);
     color: #fff;
     cursor: pointer;
     display: none;
     z-index: 1000;
-  }
-  
-  #card-container {
+}
+
+#loading-bar-container {
+    width: 100%;
+    background-color: var(--loading-bar);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+#loading-bar {
+    width: 0%;
+    height: 5px;
+    background-color: #4caf50;
+}
+
+#loading-percentage {
+    margin-left: 10px;
+    font-size: 12px;
+    color: var(--text);
+}
+
+#card-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
     gap: 10px;
     justify-items: center;
-  }
-  
-  /* Popup Styles */
+}
+
+/* Popup Styles */
 #popup {
     display: none;
     position: fixed;
@@ -119,6 +146,120 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#rarity-filter, #set-filter, #detail-filter, #sort-by, #order-toggle{
+    padding: 7px;    
+    background: var(--white);
+    color: var(--black);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--border);
+    box-sizing: border-box;
+    cursor: pointer;
+    font-family: 'NanumB', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 6px;
+    overflow: hidden;
+    width: 125px;
+
+    transition: height .4s ease;
+}
+
+#rarity-filter option, #set-filter option, #detail-filter option,  #sort-by option{
+    font-size: 12px;
+}
+
+button{
+    border: 2px solid var(--text);
+    border-radius: 30px;
+    box-sizing: border-box;
+    
+    background-color: transparent;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0px;
+    
+    height: 35px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+button:hover{
+    color: var(--buttonhov);
+    background-color: var(--text);
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2),0 10px 10px 0 rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+}
+
+button:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+footer {
+    font-size: 12px;
+    background-color: var(--footer);
+    color: var(--white);
+    text-align: left;
+    margin: 15px 0px 0px 0px;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+footer a{
+    color: var(--white);
+    text-decoration: underline;
+}
+
+footer a:hover{
+    color: var(--gray-hover);
+}
+
+.footicons{
+    font-size: 31px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: var(--white);
+}
+
+.footicons .btn {
+    margin-right: 10px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    color: var(--button-icon);
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn.btn-github, .btn.btn-dark {
+    background-color: var(--button);
+}
+
+.btn.btn-github:hover, .btn.btn-dark:hover {
+    color: var(--gray);
+}
+
+.footerContent{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
 }
 
 @media only screen and (max-width: 767px) {
@@ -147,5 +288,17 @@ body {
 
     .card{
         width: 85%;
+    }
+
+    #controls{
+        flex-direction: column;
+    }
+
+    #filters{
+        margin-bottom: 10px;
+    }
+
+    #sorting{
+        justify-content: flex-end;
     }
 }

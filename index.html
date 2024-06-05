@@ -9,12 +9,61 @@
 </head>
 <body>
 <h1>Pokémon Card Display</h1>
+<div id="loading-bar-container">
+    <div id="loading-bar"></div>
+    <div id="loading-percentage">0%</div>
+</div>
+
+<div id="controls">
+    <div id="filters">
+        <select id="rarity-filter">
+            <option value="">Filter by Rarity</option>
+        </select>
+        <select id="set-filter">
+            <option value="">Filter by Set</option>
+        </select>
+        <select id="detail-filter">
+            <option value="">All Details</option>
+        </select>        
+    </div>
+    <div id="sorting">
+        <select id="sort-by">
+            <option value="">Sort By</option>
+            <option value="name">Alphabetical</option>
+            <option value="rarity">Rarity</option>
+            <option value="releaseDate">Release Date</option>
+            <option value="price">Price</option>
+        </select>
+        <button id="order-toggle">Toggle Order</button>
+    </div>
+</div>
+
 <div id="card-container"></div>
+
 <div id="popup" class="popup">
     <span class="close">&times;</span>
     <img class="popup-content" id="popupImage" alt="Popup Image">
 </div>
-<div class="scroll-top" id="scroll-top" onclick="scrollToTop()"><i class="fa-solid fa-chevron-up"></i></div>
+
+<div class="scroll-top" id="scroll-top" onclick="scrollToTop()">
+    <i class="fa-solid fa-chevron-up"></i>
+</div>
+<footer>
+    <div class="footerContent">
+        <div class="footicons">
+            <a class="btn btn-dark" onclick="darkmode()" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-circle-half-stroke"></i>
+            </a>
+        </div>
+        <div class="credit">
+            <p>
+                Images and data are sourced from
+                <a href="https://pokemontcg.io/" target="_blank" rel="noopener noreferrer">Pokémon TCG Developers</a>.
+                <br>©<span id="year"></span> Pokémon. ©1995 - <span id="year2"></span> Nintendo/Creatures Inc./GAME FREAK inc. TM, ®Nintendo.
+            </p>
+        </div>
+    </div>
+</footer>
 <script src="script.js"></script>
 </body>
 </html>
