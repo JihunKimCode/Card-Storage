@@ -83,13 +83,30 @@ function createCardElement(card) {
   const cardDiv = document.createElement('div');
   cardDiv.className = 'card';
   cardDiv.innerHTML = `
-    <img src="${card.images.small}" alt="${card.name}" onclick="showPopup('${card.images.large}')">
-    <p>${card.name}</p>
-    <p>Set: ${card.set.name}</p>
-    <p>Release Date: ${card.set.releaseDate}</p>
-    <p>Price: $${card.cardmarket ? card.cardmarket.prices.averageSellPrice : 'N/A'}</p>
-  `;
+        <img src="${card.images.small}" alt="${card.name}" title="${card.name}" onclick="showPopup('${card.images.large}', '${card.name.replace(/'/g, '’')}')" style="cursor: zoom-in">
+        <img src="${card.set.images.logo}" alt="${card.set.name}" title="${card.set.name}" style="width: 100px; cursor: default">
+        <p><b>${card.name}</b></p>
+        <p>${card.set.releaseDate || 'N/A'}</p>
+        <p>${card.rarity || 'N/A'}</p>
+        <p>
+            ${card.tcgplayer && card.tcgplayer.url 
+            ? `<a href="${card.tcgplayer.url}" target="_blank">Avg $${getPrice(card) || 'N/A'}</a>` 
+            : `Avg $${getPrice(card) || 'N/A'}`}
+        </p>
+        `;
   cardContainer.appendChild(cardDiv);
+}
+
+// Get price of the card
+function getPrice(card) {
+    const priceAttributes = ['unlimited', '1stEdition', 'unlimitedHolofoil', '1stEditionHolofoil', 'normal', 'holofoil', 'reverseHolofoil'];
+    for (const attr of priceAttributes) {
+        const price = card.tcgplayer?.prices?.[attr]?.mid;
+        if (price !== undefined) {
+            return price;
+        }
+    }
+    return undefined;
 }
 
 function showPopup(image, name) {

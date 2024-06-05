@@ -13,29 +13,28 @@ Grant,Astral Radiance,Uncommon,Trainer,Supporter,No,1
 Ciphermaniac's Codebreaking,Temporal Forces,Uncommon,Trainer,Supporter,No,1
 Drampa,Temporal Forces,Rare,Pokemon,White,Holo,1
 Magcargo,Temporal Forces,Rare,Pokemon,Red,Holo,1
-Steelix,Fusion Strike,Rare,Pokemon,Brown,Holo,1
-Barbaracle,Lost Origin,Rare,Pokemon,Brown,Holo,1
+Steelix,Fusion Strike,Rare Holo,Pokemon,Brown,Holo,1
+Barbaracle,Lost Origin,Rare Holo,Pokemon,Brown,Holo,1
 Smoliv,Shiny Treasure ex,N/A,Pokemon,Green,Holo,1
 Arboliva,Scarlet&Violet,Rare,Pokemon,Green,Holo,1
-Eldegoss,Evolving Skies,Rare,Pokemon,Green,Holo,1
+Eldegoss,Evolving Skies,Rare Holo,Pokemon,Green,Holo,1
 Feraligatr,Temporal Forces,Rare,Pokemon,Blue,Holo,1
 Pincurchin,Paldea Evolved,Common,Pokemon,Yellow,No,1
 Drilbur,Vivid Voltage,Common,Pokemon,Brown,No,1
 Baltoy,Silver Tempest,Common,Pokemon,Brown,No,1
 Machop,Lost Origin,Common,Pokemon,Brown,No,1
-Seedot,Fusion Strike,Common,Pokemon,Green,No,1
-Grubbin,Lost Origin,Common,Pokemon,Green,No,1
+Seedot,Lost Origin,Common,Pokemon,Green,No,1
+Grubbin,Fusion Strike,Common,Pokemon,Green,No,1
 Staryu,Brilliant Stars,Common,Pokemon,Blue,No,1
 Wigglytuff,Fusion Strike,Uncommon,Pokemon,Purple,No,1
 Swirlix,Silver Tempest,Common,Pokemon,Purple,No,1
 Espurr,Silver Tempest,Common,Pokemon,Purple,No,1
 Murkrow,Lost Origin,Common,Pokemon,Black,No,1
 Hoothoot,Astral Radiance,Common,Pokemon,White,No,1
-Galarian Stunfisk,Lost Origin,Common,Pokemon,White,No,1
+Galarian Stunfisk,Lost Origin,Uncommon,Pokemon,White,No,1
 Rufflet,Silver Tempest,Common,Pokemon,White,No,1
 Chatot,Temporal Forces,Common,Pokemon,White,No,1
 Stantler,Astral Radiance,Common,Pokemon,White,No,1
-Gumshoos,Obsidian Flames,Uncommon,Pokemon,White,No,1
 Durant,Fusion Strike,Common,Pokemon,White,No,1
 Bronzor,Lost Origin,Common,Pokemon,White,No,2
 Landorus,Lost Origin,Rare,Pokemon,Brown,No,1
@@ -47,7 +46,7 @@ Kricketot,Astral Radiance,Common,Pokemon,Green,No,1
 Simisage,Fusion Strike,Uncommon,Pokemon,Green,No,1
 Durant,Silver Tempest,Common,Pokemon,Green,No,2
 Wimpod,Burning Shadows,Common,Pokemon,Green,No,1
-Gloom,Lost Origin,Common,Pokemon,Green,No,1
+Gloom,Lost Origin,Uncommon,Pokemon,Green,No,1
 Bramblin,Temporal Forces,Common,Pokemon,Green,No,1
 Tympole,Evolving Skies,Common,Pokemon,Blue,No,1
 Snover,Lost Origin,Common,Pokemon,Blue,No,1
@@ -105,8 +104,8 @@ Rufflet,Silver Tempest,Common,Pokemon,White,Reverse,1
 Braviary,Evolving Skies,Uncommon,Pokemon,White,No,2
 Copperajah,Fusion Strike,Uncommon,Pokemon,White,Reverse,1
 Gumshoos,Obsidian Flames,Uncommon,Pokemon,White,Reverse,1
-Gumshoos,Obsidian Flames,Common,Pokemon,White,No,1
-Miltank,Paldea Evolved,Common,Pokemon,White,No,1
+Gumshoos,Obsidian Flames,Uncommon,Pokemon,White,No,1
+Miltank,Paradox Rift,Common,Pokemon,White,No,1
 Rookidee,Paldea Evolved,Common,Pokemon,White,No,1
 Kecleon,Chilling Reign,Rare,Pokemon,White,Reverse,1
 Ponyta,Silver Tempest,Common,Pokemon,Red,No,1
@@ -130,7 +129,7 @@ Minior,Paradox Rift,Uncommon,Pokemon,Brown,No,1
 Mienshao,Lost Origin,Uncommon,Pokemon,Brown,No,1
 Hitmontop,Brilliant Stars,Uncommon,Pokemon,Brown,No,1
 Excadrill,Temporal Forces,Uncommon,Pokemon,Brown,No,1
-Lucario,Brilliant Stars,Rare,Pokemon,Brown,Reverse,1
+Lucario,Brilliant Stars,Rare Holo,Pokemon,Brown,Reverse,1
 Regirock,Astral Radiance,Rare,Pokemon,Brown,No,1
 Kubfu,Chilling Reign,Common,Pokemon,Brown,No,1
 Mudsdale,Temporal Forces,Uncommon,Pokemon,Brown,No,1
@@ -166,7 +165,7 @@ Yamper,Temporal Forces,Common,Pokemon,Yellow,No,1
 Vikavolt,Temporal Forces,Uncommon,Pokemon,Yellow,Reverse,1
 Vikavolt,Temporal Forces,Uncommon,Pokemon,Yellow,No,1
 Wattrel,Paldea Evolved,Common,Pokemon,Yellow,Reverse,1
-Lanturn,Evolving Skies,Rare,Pokemon,Yellow,No,1
+Lanturn,Evolving Skies,Uncommon,Pokemon,Yellow,No,1
 Emolga,Silver Tempest,Common,Pokemon,Yellow,No,2
 Shinx,Brilliant Stars,Common,Pokemon,Yellow,No,1
 Luxio,Brilliant Stars,Uncommon,Pokemon,Yellow,No,1
@@ -177,7 +176,7 @@ Eelektrik,Obsidian Flames,Common,Pokemon,Yellow,No,1
 Voltorb,Paldea Evolved,Common,Pokemon,Yellow,No,1
 Magnemite,Obsidian Flames,Common,Pokemon,Yellow,No,1
 Magneton,Scarlet&Violet,Common,Pokemon,Yellow,No,1
-Toxtricity,Fusion Strike,Rare,Pokemon,Yellow,Holo,1
+Toxtricity,Fusion Strike,Rare Holo,Pokemon,Yellow,Holo,1
 Toxtricity,Obsidian Flames,Rare,Pokemon,Yellow,Holo,1
 Petilil,Evolving Skies,Common,Pokemon,Green,No,1
 Lilligant,BREAKpoint,Rare,Pokemon,Green,No,1
@@ -248,7 +247,7 @@ Pawniard,Scarlet&Violet,Common,Pokemon,Black,No,1
 Hisuian Samurott,Astral Radiance,Rare Holo,Pokemon,Black,Holo,1
 Roaring Moon,Temporal Forces,Rare,Pokemon,Black,Holo,1
 Murkrow,Paldea Evolved,Common,Pokemon,Black,No,1
-Honchkrow,Silver Tempest,Common,Pokemon,Black,No,1
+Honchkrow,Silver Tempest,Uncommon,Pokemon,Black,No,1
 Mareanie,Silver Tempest,Common,Pokemon,Black,No,1
 Galarian Zigzagoon,Fusion Strike,Common,Pokemon,Black,No,1
 Sandile,Silver Tempest,Common,Pokemon,Black,No,1
