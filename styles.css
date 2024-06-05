@@ -38,8 +38,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: var(--background);
     padding: 0;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin: 0;
 }
 
 h1{
@@ -292,6 +291,8 @@ footer a:hover{
 
     #controls{
         flex-direction: column;
+        align-items: flex-end;
+        margin: 5px;
     }
 
     #filters{
