@@ -3,16 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>    
 <title>Pokémon TCG Card Display</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<h1>Pokémon TCG Card Display</h1>
 <div id="card-container"></div>
-<div class="card-popup" id="card-popup" style="display:none;">
-  <span onclick="closePopup()">Close</span>
-  <div id="popup-content"></div>
+<div id="popup" class="popup">
+    <span class="close">&times;</span>
+    <img class="popup-content" id="popupImage" alt="Popup Image">
 </div>
-<div class="scroll-top" id="scroll-top" onclick="scrollToTop()">Top</div>
+<div class="scroll-top" id="scroll-top" onclick="scrollToTop()"><i class="fa-solid fa-chevron-up"></i></div>
 <script src="script.js"></script>
 </body>
 </html>

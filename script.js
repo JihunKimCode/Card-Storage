@@ -19,21 +19,48 @@ async function fetchCSVData(url) {
 
 async function fetchSetData(setName) {
   const formattedSetName = setName.replace(/\s/g, '.');
-  const response = await fetch(`${apiUrl}cards?q=set.name:"${formattedSetName}"`);
+  const response = await fetch(`${apiUrl}cards?q=set.name:${formattedSetName}`);
   const data = await response.json();
   cardsData = cardsData.concat(data.data);
 }
 
 async function fetchCardData(name, rarity) {
-  const response = await fetch(`${apiUrl}cards?q=name:"${name}" rarity:${rarity}`);
-  const data = await response.json();
-  return data.data[0];
-}
+    const formattedName = name.replace(/\s/g, '.');
+    if(rarity == "N/A" || rarity == undefined){
+        let response = await fetch(`${apiUrl}cards?q=name:${formattedName}`);
+        let data = await response.json();
+        return data.data[0];
+    }
+    try {
+      const formattedRarity = rarity.replace(/\s/g, '.');
+      let response = await fetch(`${apiUrl}cards?q=name:${formattedName} rarity:${formattedRarity}`);
+      if (!response.ok) {
+        throw new Error('Bad Request');
+      }
+      let data = await response.json();
+      if (data.data.length === 0) {
+        response = await fetch(`${apiUrl}cards?q=name:${formattedName}`);
+        data = await response.json();
+      }
+      return data.data[0];
+    } catch (error) {
+      try {
+        let response = await fetch(`${apiUrl}cards?q=name:${formattedName}`);
+        let data = await response.json();
+        return data.data[0];
+      } catch (finalError) {
+        console.error('Error fetching card data:', finalError);
+        return null;
+      }
+    }
+  }  
 
 async function fetchAllSets(csvData) {
   const sets = [...new Set(csvData.map(card => card.set))];
   for (let set of sets) {
-    await fetchSetData(set);
+    if (set !== "N/A" && set !== undefined) {
+      await fetchSetData(set);
+    }
   }
   displayCards(csvData);
 }
@@ -41,7 +68,7 @@ async function fetchAllSets(csvData) {
 function displayCards(csvData) {
   csvData.forEach(async ({ name, set, rarity }) => {
     let card = cardsData.find(c => c.name === name && c.set.name === set && c.rarity === rarity);
-    if (!card) {
+    if (!card && name!==undefined) {
       card = await fetchCardData(name, rarity);
     }
     if (card) {
@@ -65,13 +92,26 @@ function createCardElement(card) {
   cardContainer.appendChild(cardDiv);
 }
 
-function showPopup(imageUrl) {
-  popupContent.innerHTML = `<img src="${imageUrl}" alt="Card Image">`;
-  cardPopup.style.display = 'block';
-}
+function showPopup(image, name) {
+    const popup = document.getElementById('popup');
+    const popupImage = document.getElementById('popupImage');
 
-function closePopup() {
-  cardPopup.style.display = 'none';
+    popup.style.display = "block";
+    popupImage.src = image;
+    document.body.style.overflow = "hidden";
+
+    const close = document.getElementsByClassName('close')[0];
+    close.onclick = function() {
+        popup.style.display = "none";
+        document.body.style.overflow = "auto";
+    };
+
+    window.onclick = function(event) {
+        if (event.target == popup) {
+            popup.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    };
 }
 
 function scrollToTop() {

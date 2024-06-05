@@ -16,7 +16,7 @@ Magcargo,Temporal Forces,Rare,Pokemon,Red,Holo,1
 Steelix,Fusion Strike,Rare,Pokemon,Brown,Holo,1
 Barbaracle,Lost Origin,Rare,Pokemon,Brown,Holo,1
 Smoliv,Shiny Treasure ex,N/A,Pokemon,Green,Holo,1
-Arboliv,Scarlet&Violet,Rare,Pokemon,Green,Holo,1
+Arboliva,Scarlet&Violet,Rare,Pokemon,Green,Holo,1
 Eldegoss,Evolving Skies,Rare,Pokemon,Green,Holo,1
 Feraligatr,Temporal Forces,Rare,Pokemon,Blue,Holo,1
 Pincurchin,Paldea Evolved,Common,Pokemon,Yellow,No,1
@@ -26,16 +26,16 @@ Machop,Lost Origin,Common,Pokemon,Brown,No,1
 Seedot,Fusion Strike,Common,Pokemon,Green,No,1
 Grubbin,Lost Origin,Common,Pokemon,Green,No,1
 Staryu,Brilliant Stars,Common,Pokemon,Blue,No,1
-Wigglytuff,Fusion Strike,Common,Pokemon,Purple,No,1
+Wigglytuff,Fusion Strike,Uncommon,Pokemon,Purple,No,1
 Swirlix,Silver Tempest,Common,Pokemon,Purple,No,1
 Espurr,Silver Tempest,Common,Pokemon,Purple,No,1
-Mukrow,Lost Origin,Common,Pokemon,Black,No,1
+Murkrow,Lost Origin,Common,Pokemon,Black,No,1
 Hoothoot,Astral Radiance,Common,Pokemon,White,No,1
 Galarian Stunfisk,Lost Origin,Common,Pokemon,White,No,1
 Rufflet,Silver Tempest,Common,Pokemon,White,No,1
 Chatot,Temporal Forces,Common,Pokemon,White,No,1
 Stantler,Astral Radiance,Common,Pokemon,White,No,1
-Gunshoos,Obsidian Flames,Uncommon,Pokemon,White,No,1
+Gumshoos,Obsidian Flames,Uncommon,Pokemon,White,No,1
 Durant,Fusion Strike,Common,Pokemon,White,No,1
 Bronzor,Lost Origin,Common,Pokemon,White,No,2
 Landorus,Lost Origin,Rare,Pokemon,Brown,No,1
@@ -66,7 +66,7 @@ Echoing Horn,Chilling Reign,Uncommon,Trainer,Item,No,2
 Heavy Baton,Temporal Forces,Uncommon,Trainer,Pokemon Tool,No,1
 Practice Studio,Paldea Evolved,Uncommon,Trainer,Stadium,No,1
 Full Metal Lab,Temporal Forces,Uncommon,Trainer,Stadium,No,1
-Lake Activity,Lost Origin,Uncommon,Trainer,Stadium,No,1
+Lake Acuity,Lost Origin,Uncommon,Trainer,Stadium,No,1
 Calamitous Snowy Mountain,Paldea Evolved,Uncommon,Trainer,Stadium,No,1
 Shopping Center,Evolving Skies,Uncommon,Trainer,Stadium,Reverse,1
 V STAR,N/A,N/A,N/A,N/A,No,1
@@ -140,7 +140,7 @@ Golett,Temporal Forces,Common,Pokemon,Brown,No,1
 Golurk,Temporal Forces,Uncommon,Pokemon,Brown,No,1
 Meditite,Lost Origin,Common,Pokemon,Brown,No,1
 Gliscor,Lost Origin,Rare,Pokemon,Brown,No,1
-Makushita,Lost Origin,Common,Pokemon,Brown,No,1
+Makuhita,Lost Origin,Common,Pokemon,Brown,No,1
 Hariyama,Lost Origin,Uncommon,Pokemon,Brown,No,1
 Binacle,Lost Origin,Common,Pokemon,Brown,No,1
 Mienfoo,Lost Origin,Common,Pokemon,Brown,No,1
@@ -159,7 +159,7 @@ Lanturn,Silver Tempest,Uncommon,Pokemon,Yellow,No,1
 Pikachu,Silver Tempest,Common,Pokemon,Yellow,No,1
 Pikachu,Lost Origin,Common,Pokemon,Yellow,No,1
 Raichu,Clay Burst,Uncommon,Pokemon,Yellow,No,1
-Plusie,Fusion Strike,Common,Pokemon,Yellow,No,1
+Plusle,Fusion Strike,Common,Pokemon,Yellow,No,1
 Minun,Paradox Rift,Common,Pokemon,Yellow,No,1
 Pawmi,Paldea Evolved,Common,Pokemon,Yellow,No,1
 Yamper,Temporal Forces,Common,Pokemon,Yellow,No,1
@@ -192,7 +192,7 @@ Radiant Tsareena,Silver Tempest,Radiant Rare,Pokemon,Green,Holo,1
 Tsareena,Chilling Reign,Rare,Pokemon,Green,Reverse,1
 Phantump,Obsidian Flames,Common,Pokemon,Green,No,1
 Toedscool,Scarlet&Violet,Common,Pokemon,Green,No,1
-Swasbuck,Temporal Forces,Uncommon,Pokemon,Green,No,1
+Sawsbuck,Temporal Forces,Uncommon,Pokemon,Green,No,1
 Scyther,Astral Radiance,Common,Pokemon,Green,No,1
 Scyther,Temporal Forces,Common,Pokemon,Green,No,1
 Scyther,Obsidian Flames,Common,Pokemon,Green,Reverse,1
@@ -200,8 +200,8 @@ Bramblin,Temporal Forces,Common,Pokemon,Green,No,1
 Heracross,Chilling Reign,Common,Pokemon,Green,No,1
 Yanma,Astral Radiance,Common,Pokemon,Green,No,1
 Cottonee,Temporal Forces,Common,Pokemon,Green,No,1
-Scovilain,Scarlet&Violet,Uncommon,Pokemon,Green,No,1
-Doliv,Scarlet&Violet,Common,Pokemon,Green,No,1
+Scovillain,Scarlet&Violet,Uncommon,Pokemon,Green,No,1
+Dolliv,Scarlet&Violet,Common,Pokemon,Green,No,1
 Shiftry,Temporal Forces,Uncommon,Pokemon,Green,No,1
 Masquerain,Paradox Rift,Uncommon,Pokemon,Green,No,1
 Dhelmise,Temporal Forces,Uncommon,Pokemon,Green,No,1
@@ -217,21 +217,21 @@ Buizel,Brilliant Stars,Common,Pokemon,Blue,No,1
 Seel,Lost Origin,Common,Pokemon,Blue,No,1
 Snorunt,Silver Tempest,Common,Pokemon,Blue,No,1
 Dewpider,Silver Tempest,Common,Pokemon,Blue,No,1
-Araquarid,Silver Tempest,Uncommon,Pokemon,Blue,No,1
+Araquanid,Silver Tempest,Uncommon,Pokemon,Blue,No,1
 Poliwag,Lost Origin,Common,Pokemon,Blue,No,1
 Lumineon,Lost Origin,Uncommon,Pokemon,Blue,No,1
 Carvanha,Temporal Forces,Common,Pokemon,Blue,No,1
-Clawtizer,Scarlet&Violet,Common,Pokemon,Blue,No,1
+Clawitzer,Scarlet&Violet,Common,Pokemon,Blue,No,1
 Croconaw,Temporal Forces,Common,Pokemon,Blue,Reverse,1
 Hisuian Basculegion,Astral Radiance,Rare,Pokemon,Blue,Reverse,1
 Mimikyu,Paldea Evolved,Rare,Pokemon,Purple,Holo,1
 Meditite,Silver Tempest,Common,Pokemon,Purple,No,1
-Mismagulus,Paldea Evolved,Uncommon,Pokemon,Purple,No,1
+Mismagius,Paldea Evolved,Uncommon,Pokemon,Purple,No,1
 Jigglypuff,Fusion Strike,Common,Pokemon,Purple,No,1
 Hisuian Zorua,Lost Origin,Common,Pokemon,Purple,No,1
 Ralts,Astral Radiance,Common,Pokemon,Purple,No,1
 Kirlia,Silver Tempest,Uncommon,Pokemon,Purple,No,1
-Iron Villians,Temporal Forces,Uncommon,Pokemon,Purple,No,1
+Iron Valiant,Temporal Forces,Uncommon,Pokemon,Purple,No,1
 Indeedee,Silver Tempest,Common,Pokemon,Purple,No,1
 Latias,Temporal Forces,Uncommon,Pokemon,Purple,No,1
 Clefairy,Brilliant Stars,Common,Pokemon,Purple,No,1
@@ -240,7 +240,7 @@ Hatenna,Chilling Reign,Common,Pokemon,Purple,No,1
 Hattrem,Chilling Reign,Uncommon,Pokemon,Purple,No,1
 Slurpuff,Silver Tempest,Uncommon,Pokemon,Purple,No,2
 Swoobat,Evolving Skies,Uncommon,Pokemon,Purple,No,1
-Giragarig,Temporal Forces,Common,Pokemon,Purple,No,1
+Girafarig,Temporal Forces,Common,Pokemon,Purple,No,1
 Galarian Corsola,Fusion Strike,Common,Pokemon,Purple,No,1
 Elgyem,Temporal Forces,Common,Pokemon,Purple,No,1
 Comfey,Lost Origin,Rare,Pokemon,Purple,Reverse,1
@@ -255,11 +255,3 @@ Sandile,Silver Tempest,Common,Pokemon,Black,No,1
 Whirlipede,Chilling Reign,Uncommon,Pokemon,Black,No,1
 Yveltal,Fusion Strike,Rare,Pokemon,Black,No,1
 Mightyena,Temporal Forces,Common,Pokemon,Black,Reverse,1
-Fire,N/A,N/A,Energy,Fire,No,1
-Fighting,N/A,N/A,Energy,Fighting,No,6
-Electric,N/A,N/A,Energy,Electric,No,2
-Grass,N/A,N/A,Energy,Grass,No,2
-Water,N/A,N/A,Energy,Water,No,4
-Psychic,N/A,N/A,Energy,Psychic,No,2
-Metal,N/A,N/A,Energy,Metal,No,2
-Dark,N/A,N/A,Energy,Dark,No,3
