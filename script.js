@@ -24,7 +24,54 @@ async function fetchSetData(setName) {
   cardsData = cardsData.concat(data.data);
 }
 
-async function fetchCardData(name, rarity) {
+async function fetchCardData(name, set, rarity) {
+    const formattedName = name.replace(/\s/g, '.');
+    let data;
+  
+    try {
+      // Search with q=name first
+      let response = await fetch(`${apiUrl}cards?q=name:${formattedName}`);
+      data = await response.json();
+      
+      if (data.data.length === 0) {
+        return null;
+      }
+  
+      // If there is more than one result, filter by set
+      if (data.data.length > 1) {
+        const matchedSetCards = data.data.filter(card => card.set.name.includes(set));
+
+        // If there is still more than one result, filter by rarity
+        if (matchedSetCards.length >= 1 && rarity !== "N/A" && rarity !== undefined) {
+          const matchedRarityCards = matchedSetCards.filter(card => card.rarity === rarity);
+          
+          if (matchedRarityCards.length === 1) {
+            return matchedRarityCards[0];
+          } else {
+            return matchedRarityCards.length > 0 ? matchedRarityCards[0] : null;
+          }
+        } else if (matchedSetCards.length === 0 && rarity !== "N/A" && rarity !== undefined) {
+          // If no matched set, find matched rarity
+          const matchedRarityCards = data.data.filter(card => card.rarity === rarity);
+  
+          if (matchedRarityCards.length === 1) {
+            return matchedRarityCards[0];
+          } else {
+            return matchedRarityCards.length > 0 ? matchedRarityCards[0] : DeeperfetchCardData(name, rarity);
+          }
+        } else {
+          return matchedSetCards.length > 0 ? matchedSetCards[0] : DeeperfetchCardData(name, rarity);
+        }
+      } else {
+        return data.data[0];
+      }
+    } catch (error) {
+      console.error('Error fetching card data:', error);
+      return null;
+    }
+  }  
+
+  async function DeeperfetchCardData(name, rarity) {
     const formattedName = name.replace(/\s/g, '.');
     if(rarity == "N/A" || rarity == undefined){
         let response = await fetch(`${apiUrl}cards?q=name:${formattedName}`);
@@ -53,7 +100,7 @@ async function fetchCardData(name, rarity) {
         return null;
       }
     }
-  }  
+}  
 
 async function fetchAllSets(csvData) {
   const sets = [...new Set(csvData.map(card => card.set))];
@@ -69,7 +116,8 @@ function displayCards(csvData) {
   csvData.forEach(async ({ name, set, rarity }) => {
     let card = cardsData.find(c => c.name === name && c.set.name === set && c.rarity === rarity);
     if (!card && name!==undefined) {
-      card = await fetchCardData(name, rarity);
+        console.log(`name: ${name}; set: ${set}; rarity: ${rarity}`)
+      card = await fetchCardData(name, set, rarity);
     }
     if (card) {
       createCardElement(card);
