@@ -3,15 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pokemon Card Viewer</title>
+<title>Pokémon TCG Card Display</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<h1>Pokemon Card Viewer</h1>
-
-<div id="cardContainer"></div>
-
+<div id="card-container"></div>
+<div class="card-popup" id="card-popup" style="display:none;">
+  <span onclick="closePopup()">Close</span>
+  <div id="popup-content"></div>
+</div>
+<div class="scroll-top" id="scroll-top" onclick="scrollToTop()">Top</div>
 <script src="script.js"></script>
 </body>
 </html>
