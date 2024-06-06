@@ -275,8 +275,16 @@ function populateFilters() {
     const artistFilter = document.getElementById('artist-filter');
     const holoFilter = document.getElementById('holo-filter');
 
-    // Get unique values and sort them alphabetically
-    const rarities = [...new Set(csvData.map(card => card.rarity).filter(rarity => rarity && rarity !== "N/A"))].sort();
+    // Sort rarity
+    const rarities = [...new Set(csvData.map(card => card.rarity).filter(rarity => rarity && rarity !== "N/A"))]
+    .sort((a, b) => {
+        const orderA = rarityOrder[a] || 0;
+        const orderB = rarityOrder[b] || 0;
+        if (orderA === orderB) return a.localeCompare(b);  // Alphabetical comparison if order is the same
+        return orderA - orderB;
+    });
+    
+    // Sort them alphabetically
     const sets = [...new Set(csvData.map(card => card.set).filter(set => set && set !== "N/A"))].sort();
     const details = [...new Set(csvData.map(card => card.detail).filter(detail => detail && detail !== "N/A"))].sort();
     const artists = [...new Set(csvData.map(card => card.artist).filter(artist => artist && artist !== "N/A"))].sort();
@@ -428,8 +436,8 @@ const rarityOrder = {
     "Rare Holo EX": 6,
     "Rare Holo GX": 6,
     "Rare Holo V": 6,
-    "Rare Holo VSTAR": 6,
-    "Rare Holo VMAX": 6,
+    "Rare Holo VSTAR": 7,
+    "Rare Holo VMAX": 7,
     "Rare Secret": 7,
     "Trainer Gallery Rare Holo": 7,
     "Rare Rainbow": 7,
