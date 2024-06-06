@@ -51,79 +51,67 @@ async function fetchSetData(setName) {
 // search with name and then set and rarity
 async function fetchCardData(name, set, rarity, artist) {
     const formattedName = name.replace(/\s/g, '.');
-    let data;
 
     try {
-        let response = await fetch(`${apiUrl}cards?q=name:${formattedName}`);
-        data = await response.json();
+        let cards = await fetchCardsByName(formattedName);
+        if (!cards) return null;
 
-        if (data.data.length === 0) {
-            return null;
+        // Filter by set name if available
+        let matchedCards = filterCardsBySet(cards, set);
+        if (matchedCards.length === 0) {
+            matchedCards = cards;
         }
 
-        if (data.data.length > 1) {
-            const matchedSetCards = data.data.filter(card => card.set.name.includes(set));
-
-            if (matchedSetCards.length >= 1 && rarity !== "N/A" && rarity !== undefined) {
-                const matchedRarityCards = matchedSetCards.filter(card => card.rarity === rarity);
-
-                if (matchedRarityCards.length === 1) return matchedRarityCards[0];
-                
-                else {
-                    const matchedArtistCards = matchedRarityCards.filter(card => card.artist === artist);
-                    return matchedArtistCards.length > 0 ? matchedRarityCards[0] : null;
-                }
-            } else if (matchedSetCards.length === 0 && rarity !== "N/A" && rarity !== undefined) {
-                const matchedRarityCards = data.data.filter(card => card.rarity === rarity);
-
-                if (matchedRarityCards.length === 1) {
-                    return matchedRarityCards[0];
-                } else {
-                    console.log(artist);
-                    const matchedArtistCards = matchedRarityCards.filter(card => card.artist === artist);
-                    return matchedArtistCards.length > 0 ? matchedArtistCards[0] : await deeperFetchCardData(name, rarity);
-                }
-            } else {
-                return matchedSetCards.length > 0 ? matchedSetCards[0] : await deeperFetchCardData(name, rarity);
-            }
-        } else {
-            return data.data[0];
+        // Further filter by rarity if specified
+        if (rarity !== "N/A" && rarity !== undefined) {
+            matchedCards = filterCardsByRarity(matchedCards, rarity);
         }
+
+        // Further filter by artist if specified
+        if (matchedCards.length > 1 && artist) {
+            matchedCards = filterCardsByArtist(matchedCards, artist);
+        }
+
+        return matchedCards.length > 0 ? matchedCards[0] : await fetchCardByNameAndRarity(formattedName, rarity);
     } catch (error) {
         console.error('Error fetching card data:', error);
         return null;
     }
 }
 
-//search only with name and rarity
-async function deeperFetchCardData(name, rarity) {
-    const formattedName = name.replace(/\s/g, '.');
-    if (rarity == "N/A" || rarity == undefined) {
-        let response = await fetch(`${apiUrl}cards?q=name:${formattedName}`);
-        let data = await response.json();
-        return data.data[0];
-    }
+async function fetchCardsByName(name) {
     try {
-        const formattedRarity = rarity.replace(/\s/g, '.');
-        let response = await fetch(`${apiUrl}cards?q=name:${formattedName} rarity:${formattedRarity}`);
-        if (!response.ok) {
-            throw new Error('Bad Request');
-        }
+        let response = await fetch(`${apiUrl}cards?q=name:${name}`);
         let data = await response.json();
-        if (data.data.length === 0) {
-            response = await fetch(`${apiUrl}cards?q=name:${formattedName}`);
-            data = await response.json();
-        }
-        return data.data[0];
+        return data.data.length > 0 ? data.data : null;
     } catch (error) {
-        try {
-            let response = await fetch(`${apiUrl}cards?q=name:${formattedName}`);
-            let data = await response.json();
-            return data.data[0];
-        } catch (finalError) {
-            console.error('Error fetching card data:', finalError);
-            return null;
-        }
+        console.error('Error fetching cards by name:', error);
+        return null;
+    }
+}
+
+function filterCardsBySet(cards, set) {
+    return cards.filter(card => card.set.name.includes(set));
+}
+
+function filterCardsByRarity(cards, rarity) {
+    return cards.filter(card => card.rarity === rarity);
+}
+
+function filterCardsByArtist(cards, artist) {
+    return cards.filter(card => card.artist === artist);
+}
+
+async function fetchCardByNameAndRarity(name, rarity) {
+    const formattedName = name.replace(/\s/g, '.');
+
+    try {
+        let response = await fetch(`${apiUrl}cards?q=name:${formattedName} rarity:${rarity.replace(/\s/g, '.')}`);
+        let data = await response.json();
+        return data.data.length > 0 ? data.data[0] : await fetchCardsByName(name);
+    } catch (error) {
+        console.error('Error fetching card by name and rarity:', error);
+        return await fetchCardsByName(name);
     }
 }
 
@@ -316,6 +304,7 @@ function populateFilters() {
 document.getElementById('rarity-filter').addEventListener('change', applyFilters);
 document.getElementById('set-filter').addEventListener('change', applyFilters);
 document.getElementById('detail-filter').addEventListener('change', applyFilters);
+document.getElementById('artist-filter').addEventListener('change', applyFilters);
 document.getElementById('sort-by').addEventListener('change', sortAndDisplayCards);
 document.getElementById('order-toggle').addEventListener('click', () => {
     sortOrder *= -1;
@@ -329,7 +318,7 @@ async function applyFilters() {
     const detailFilter = document.getElementById('detail-filter').value;
     const artistFilter = document.getElementById('artist-filter').value;
 
-    displayCardsData = csvData.filter(card => {
+    filteredCards = csvData.filter(card => {
         return (!rarityFilter || card.rarity === rarityFilter) &&
                (!setFilter || card.set === setFilter) &&
                (!detailFilter || card.detail === detailFilter) &&
@@ -356,10 +345,10 @@ function sortAndDisplayCards() {
         } else if (sortBy === 'price') {
             compare = b.price - a.price;
         } else if (sortBy === 'artist') {
-            compare = a.artist.localeCompare(b.artist);
+            compare = (a.artist || '').localeCompare(b.artist || '');
         }
         return compare * sortOrder;
-    });    
+    });
 
     displayCards();
     enableFilters(); // Re-enable filters after sorting
