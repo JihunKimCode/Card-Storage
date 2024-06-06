@@ -48,7 +48,6 @@ async function fetchSetData(setName) {
     cardsData = cardsData.concat(data.data);
 }
 
-// search with name and then set and rarity
 async function fetchCardData(name, set, rarity, artist) {
     const formattedName = name.replace(/\s/g, '.');
 
@@ -72,6 +71,8 @@ async function fetchCardData(name, set, rarity, artist) {
             matchedCards = filterCardsByArtist(matchedCards, artist);
         }
 
+        // Update cardsData with fetched cards
+        cardsData = cardsData.concat(matchedCards);
         return matchedCards.length > 0 ? matchedCards[0] : await fetchCardByNameAndRarity(formattedName, rarity);
     } catch (error) {
         console.error('Error fetching card data:', error);
@@ -339,7 +340,26 @@ async function applyFilters() {
                (!holoFilter || card.holo === holoFilter);
     });
 
-    await createDisplayCardsData(); // Ensure this is complete before enabling filters
+    // Filter displayCardsData directly without fetching new data
+    displayCardsData = filteredCards.map(({ name, set, rarity, artist, holo }) => {
+        if (!name) {
+            console.error('Card name is blank or undefined');
+            return null;
+        }
+        let card = cardsData.find(c => c.name === name && c.set.name === set && c.rarity === rarity && c.artist === artist);
+        if (!card) card = cardsData.find(c => c.name === name && c.rarity === rarity && c.artist === artist);
+        if (!card) card = cardsData.find(c => c.name === name && c.artist === artist);
+        if (!card) card = cardsData.find(c => c.name === name);
+        if (card) {
+            const releaseDate = card.set.releaseDate || '';
+            const price = getPrice(card) || 0;
+            return { ...card, releaseDate, price, holo };
+        } else {
+            console.error(`Card not found: ${name}`);
+            return null;
+        }
+    }).filter(Boolean); // Filter out null values
+
     sortAndDisplayCards();
     enableFilters(); // Re-enable filters after applying
 }
