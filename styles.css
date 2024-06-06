@@ -177,7 +177,7 @@ h1{
     transform: translate(-50%, -50%);
 }
 
-#rarity-filter, #set-filter, #detail-filter, #artist-filter, #sort-by, #order-toggle{
+#rarity-filter, #set-filter, #detail-filter, #artist-filter, #holo-filter, #sort-by, #order-toggle{
     padding: 7px;    
     background: var(--white);
     color: var(--black);
@@ -192,11 +192,11 @@ h1{
     font-weight: bold;
     margin-right: 6px;
     overflow: hidden;
-    width: 130px;
+    width: 100px;
     transition: height .4s ease;
 }
 
-#rarity-filter option, #set-filter option, #detail-filter option,  #artist-filter option, #sort-by option{
+#rarity-filter option, #set-filter option, #detail-filter option,  #artist-filter option, #holo-filter option, #sort-by option{
     font-size: 12px;
 }
 
@@ -325,7 +325,7 @@ footer a:hover{
         margin-left: 15px;
     }
 
-    #rarity-filter, #set-filter, #detail-filter, #artist-filter, #sort-by, #order-toggle{
+    #rarity-filter, #set-filter, #detail-filter, #artist-filter, #holo-filter, #sort-by, #order-toggle{
         width: 100%;
     }
 

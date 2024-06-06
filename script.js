@@ -143,7 +143,7 @@ async function fetchAllSets() {
 
 async function createDisplayCardsData() {
     displayCardsData = []; // Clear previous data
-    for (const { name, set, rarity, artist } of filteredCards) {
+    for (const { name, set, rarity, artist, holo } of filteredCards) {
         if (!name) {
             console.error('Card name is blank or undefined');
             continue; // Skip this card
@@ -157,7 +157,7 @@ async function createDisplayCardsData() {
             // Store additional information
             const releaseDate = card.set.releaseDate || '';
             const price = getPrice(card) || 0;
-            displayCardsData.push({ ...card, releaseDate, price});
+            displayCardsData.push({ ...card, releaseDate, price, holo });
         } else {
             console.error(`Card not found: ${name}`);
         }
@@ -176,10 +176,19 @@ function displayCards() {
 function createCardElement(card) {
     const cardDiv = document.createElement('div');
     cardDiv.className = 'card';
+
+    // Determine holo symbol
+    let holoSymbol = '';
+    if (card.holo === "Holo") {
+        holoSymbol = '✨';
+    } else if (card.holo === "Reverse") {
+        holoSymbol = '🌟';
+    }
+
     cardDiv.innerHTML = `
         <img src="${card.images.small}" alt="${card.name}" title="${card.name}" onclick="showPopup('${card.images.large}', '${card.name.replace(/'/g, '’')}')" style="cursor: zoom-in">
         <img src="${card.set.images.logo}" alt="${card.set.name}" title="${card.set.name}" style="width: 100px; cursor: default">
-        <p><b>${card.name}</b></p>
+        <p><b>${card.name}${holoSymbol}</b></p>
         <p>${card.releaseDate || 'N/A'}</p>
         <p>${card.rarity || 'N/A'}</p>
         <p>
@@ -242,6 +251,7 @@ function disableFilters() {
     document.getElementById('set-filter').disabled = true;
     document.getElementById('detail-filter').disabled = true;
     document.getElementById('artist-filter').disabled = true;
+    document.getElementById('holo-filter').disabled = true;
     document.getElementById('sort-by').disabled = true;
     document.getElementById('order-toggle').disabled = true;
 }
@@ -252,6 +262,7 @@ function enableFilters() {
     document.getElementById('set-filter').disabled = false;
     document.getElementById('detail-filter').disabled = false;
     document.getElementById('artist-filter').disabled = false;
+    document.getElementById('holo-filter').disabled = false;
     document.getElementById('sort-by').disabled = false;
     document.getElementById('order-toggle').disabled = false;
 }
@@ -305,6 +316,7 @@ document.getElementById('rarity-filter').addEventListener('change', applyFilters
 document.getElementById('set-filter').addEventListener('change', applyFilters);
 document.getElementById('detail-filter').addEventListener('change', applyFilters);
 document.getElementById('artist-filter').addEventListener('change', applyFilters);
+document.getElementById('holo-filter').addEventListener('change', applyFilters);
 document.getElementById('sort-by').addEventListener('change', sortAndDisplayCards);
 document.getElementById('order-toggle').addEventListener('click', () => {
     sortOrder *= -1;
@@ -317,13 +329,15 @@ async function applyFilters() {
     const setFilter = document.getElementById('set-filter').value;
     const detailFilter = document.getElementById('detail-filter').value;
     const artistFilter = document.getElementById('artist-filter').value;
+    const holoFilter = document.getElementById('holo-filter').value;
 
     filteredCards = csvData.filter(card => {
         return (!rarityFilter || card.rarity === rarityFilter) &&
                (!setFilter || card.set === setFilter) &&
                (!detailFilter || card.detail === detailFilter) &&
-               (!artistFilter || card.artist === artistFilter);
-    });    
+               (!artistFilter || card.artist === artistFilter) &&
+               (!holoFilter || card.holo === holoFilter);
+    });
 
     await createDisplayCardsData(); // Ensure this is complete before enabling filters
     sortAndDisplayCards();
