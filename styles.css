@@ -12,7 +12,6 @@
     --white: #fff;
     --black: #000;
     --popup: rgba(0, 0, 0, 0.7);
-    --error: red;
     --dark-gray: #aaa;
 }
 
@@ -30,7 +29,6 @@
     --white: #fff;
     --black: #000;
     --popup: rgba(0, 0, 0, 0.7);
-    --error: red;
     --dark-gray: #aaa;
 }
 
@@ -41,8 +39,35 @@ body {
     margin: 0;
 }
 
+/* Scroll Bar Width */
+::-webkit-scrollbar {
+    scroll-behavior: smooth;
+    height: calc(100% - 3em);
+    overflow-y: auto;
+    width: 10px;
+    height: 10px;
+}
+
+/* Scroll Bar Track */
+::-webkit-scrollbar-track {
+    border: none;
+    border-radius: 10px;
+}
+
+/* Scroll Bar Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--footer);  
+    border-radius: 20px;
+}
+
+/* Scroll Bar Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-hover);  
+}
+
 h1{
     margin-left: 20px;
+    color: var(--text);
 }
 
 #controls {
@@ -53,7 +78,6 @@ h1{
 
 #filters, #sorting {
     display: flex;
-    gap: 10px;
 }
 
 .card {
@@ -113,7 +137,7 @@ h1{
 #loading-bar {
     width: 0%;
     height: 5px;
-    background-color: #4caf50;
+    background-color: var(--dark-gray);
 }
 
 #loading-percentage {
@@ -168,8 +192,7 @@ h1{
     font-weight: bold;
     margin-right: 6px;
     overflow: hidden;
-    width: 125px;
-
+    width: 130px;
     transition: height .4s ease;
 }
 
@@ -298,14 +321,21 @@ footer a:hover{
     #controls{
         flex-direction: column;
         align-items: flex-end;
-        margin: 5px;
+        margin: 10px;
+        margin-left: 15px;
+    }
+
+    #rarity-filter, #set-filter, #detail-filter, #sort-by, #order-toggle{
+        width: 100%;
     }
 
     #filters{
         margin-bottom: 10px;
+        width: 100%;
     }
 
     #sorting{
         justify-content: flex-end;
+        width: 100%;
     }
 }
