@@ -91,7 +91,13 @@ h1{
     cursor: pointer;
     display: none;
     z-index: 1000;
+    border-radius: 10px;
 }
+
+#scroll-top:hover {
+    background-color: var(--gray-hover);
+}
+
 
 #loading-bar-container {
     width: 100%;
