@@ -35,8 +35,8 @@ async function fetchCSVData(url) {
     const response = await fetch(url);
     const data = await response.text();
     return data.split('\n').slice(1).map(line => {
-        const [name, set, rarity, category, detail, holo, count] = line.split(',');
-        return { name, set, rarity, category, detail, holo, count };
+        const [name, set, rarity, artist, category, detail, holo, count] = line.split(',');
+        return { name, set, rarity, artist, category, detail, holo, count };
     });
 }
 
@@ -49,7 +49,7 @@ async function fetchSetData(setName) {
 }
 
 // search with name and then set and rarity
-async function fetchCardData(name, set, rarity) {
+async function fetchCardData(name, set, rarity, artist) {
     const formattedName = name.replace(/\s/g, '.');
     let data;
 
@@ -67,10 +67,11 @@ async function fetchCardData(name, set, rarity) {
             if (matchedSetCards.length >= 1 && rarity !== "N/A" && rarity !== undefined) {
                 const matchedRarityCards = matchedSetCards.filter(card => card.rarity === rarity);
 
-                if (matchedRarityCards.length === 1) {
-                    return matchedRarityCards[0];
-                } else {
-                    return matchedRarityCards.length > 0 ? matchedRarityCards[0] : null;
+                if (matchedRarityCards.length === 1) return matchedRarityCards[0];
+                
+                else {
+                    const matchedArtistCards = matchedRarityCards.filter(card => card.artist === artist);
+                    return matchedArtistCards.length > 0 ? matchedRarityCards[0] : null;
                 }
             } else if (matchedSetCards.length === 0 && rarity !== "N/A" && rarity !== undefined) {
                 const matchedRarityCards = data.data.filter(card => card.rarity === rarity);
@@ -78,7 +79,9 @@ async function fetchCardData(name, set, rarity) {
                 if (matchedRarityCards.length === 1) {
                     return matchedRarityCards[0];
                 } else {
-                    return matchedRarityCards.length > 0 ? matchedRarityCards[0] : await deeperFetchCardData(name, rarity);
+                    console.log(artist);
+                    const matchedArtistCards = matchedRarityCards.filter(card => card.artist === artist);
+                    return matchedArtistCards.length > 0 ? matchedArtistCards[0] : await deeperFetchCardData(name, rarity);
                 }
             } else {
                 return matchedSetCards.length > 0 ? matchedSetCards[0] : await deeperFetchCardData(name, rarity);
@@ -152,21 +155,21 @@ async function fetchAllSets() {
 
 async function createDisplayCardsData() {
     displayCardsData = []; // Clear previous data
-    for (const { name, set, rarity } of filteredCards) {
+    for (const { name, set, rarity, artist } of filteredCards) {
         if (!name) {
             console.error('Card name is blank or undefined');
             continue; // Skip this card
         }
 
-        let card = cardsData.find(c => c.name === name && c.set.name === set && c.rarity === rarity);
+        let card = cardsData.find(c => c.name === name && c.set.name === set && c.rarity === rarity && c.artist === artist);
         if (!card) {
-            card = await fetchCardData(name, set, rarity);
+            card = await fetchCardData(name, set, rarity, artist);
         }
         if (card) {
             // Store additional information
             const releaseDate = card.set.releaseDate || '';
             const price = getPrice(card) || 0;
-            displayCardsData.push({ ...card, releaseDate, price });
+            displayCardsData.push({ ...card, releaseDate, price});
         } else {
             console.error(`Card not found: ${name}`);
         }
@@ -250,6 +253,7 @@ function disableFilters() {
     document.getElementById('rarity-filter').disabled = true;
     document.getElementById('set-filter').disabled = true;
     document.getElementById('detail-filter').disabled = true;
+    document.getElementById('artist-filter').disabled = true;
     document.getElementById('sort-by').disabled = true;
     document.getElementById('order-toggle').disabled = true;
 }
@@ -259,6 +263,7 @@ function enableFilters() {
     document.getElementById('rarity-filter').disabled = false;
     document.getElementById('set-filter').disabled = false;
     document.getElementById('detail-filter').disabled = false;
+    document.getElementById('artist-filter').disabled = false;
     document.getElementById('sort-by').disabled = false;
     document.getElementById('order-toggle').disabled = false;
 }
@@ -267,8 +272,15 @@ function populateFilters() {
     const rarityFilter = document.getElementById('rarity-filter');
     const setFilter = document.getElementById('set-filter');
     const detailFilter = document.getElementById('detail-filter');
+    const artistFilter = document.getElementById('artist-filter');
 
-    const rarities = [...new Set(csvData.map(card => card.rarity).filter(rarity => rarity && rarity !== "N/A"))];
+    // Get unique values and sort them alphabetically
+    const rarities = [...new Set(csvData.map(card => card.rarity).filter(rarity => rarity && rarity !== "N/A"))].sort();
+    const sets = [...new Set(csvData.map(card => card.set).filter(set => set && set !== "N/A"))].sort();
+    const details = [...new Set(csvData.map(card => card.detail).filter(detail => detail && detail !== "N/A"))].sort();
+    const artists = [...new Set(csvData.map(card => card.artist).filter(artist => artist && artist !== "N/A"))].sort();
+
+    // Populate rarity filter
     rarities.forEach(rarity => {
         const option = document.createElement('option');
         option.value = rarity;
@@ -276,7 +288,7 @@ function populateFilters() {
         rarityFilter.appendChild(option);
     });
 
-    const sets = [...new Set(csvData.map(card => card.set).filter(set => set && set !== "N/A"))];
+    // Populate set filter
     sets.forEach(set => {
         const option = document.createElement('option');
         option.value = set;
@@ -284,7 +296,7 @@ function populateFilters() {
         setFilter.appendChild(option);
     });
 
-    const details = [...new Set(csvData.map(card => card.detail).filter(detail => detail && detail !== "N/A"))];
+    // Populate detail filter
     details.forEach(detail => {
         const option = document.createElement('option');
         option.value = detail;
@@ -292,9 +304,13 @@ function populateFilters() {
         detailFilter.appendChild(option);
     });
 
-    document.getElementById('rarity-filter').addEventListener('change', applyFilters);
-    document.getElementById('set-filter').addEventListener('change', applyFilters);
-    document.getElementById('detail-filter').addEventListener('change', applyFilters);
+    // Populate artist filter
+    artists.forEach(artist => {
+        const option = document.createElement('option');
+        option.value = artist;
+        option.textContent = artist;
+        artistFilter.appendChild(option);
+    });
 }
 
 document.getElementById('rarity-filter').addEventListener('change', applyFilters);
@@ -311,12 +327,14 @@ async function applyFilters() {
     const rarityFilter = document.getElementById('rarity-filter').value;
     const setFilter = document.getElementById('set-filter').value;
     const detailFilter = document.getElementById('detail-filter').value;
+    const artistFilter = document.getElementById('artist-filter').value;
 
-    filteredCards = csvData.filter(card => {
+    displayCardsData = csvData.filter(card => {
         return (!rarityFilter || card.rarity === rarityFilter) &&
                (!setFilter || card.set === setFilter) &&
-               (!detailFilter || card.detail === detailFilter);
-    });
+               (!detailFilter || card.detail === detailFilter) &&
+               (!artistFilter || card.artist === artistFilter);
+    });    
 
     await createDisplayCardsData(); // Ensure this is complete before enabling filters
     sortAndDisplayCards();
@@ -336,10 +354,12 @@ function sortAndDisplayCards() {
         } else if (sortBy === 'releaseDate') {
             compare = (a.releaseDate || '').localeCompare(b.releaseDate || '');
         } else if (sortBy === 'price') {
-            compare = b.price - a.price; // Sort in descending order
+            compare = b.price - a.price;
+        } else if (sortBy === 'artist') {
+            compare = a.artist.localeCompare(b.artist);
         }
         return compare * sortOrder;
-    });
+    });    
 
     displayCards();
     enableFilters(); // Re-enable filters after sorting
