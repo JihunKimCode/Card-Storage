@@ -1,16 +1,16 @@
 ﻿Name,Sets,Rarity,Artist,Category,Detail,Holo,Count
-Friends in Galar,Brilliant Stars,Uncommon,Yuu Nishida,Trainer,Supporter,No,1
-Serena,Silver Tempest,Uncommon,Ken Sugimori,Trainer,Supporter,No,1
-Shauna,Fusion Strike,Uncommon,Yuu Nishida,Trainer,Supporter,No,1
-Roxanne,Astral Radiance,Uncommon,Megumi Mizutani,Trainer,Supporter,No,1
-Bianca's Devotion,Temporal Forces,Uncommon,En Morikura,Trainer,Supporter,No,1
-Iono,Paldea Evolved,Uncommon,Sanosuke Sakuma,Trainer,Supporter,No,1
-Eri,Temporal Forces,Uncommon,GOSSAN,Trainer,Supporter,No,1
+Friends in Galar,Brilliant Stars,Uncommon,Yuu Nishida,Trainer,Supporter,Non-Holo,1
+Serena,Silver Tempest,Uncommon,Ken Sugimori,Trainer,Supporter,Non-Holo,1
+Shauna,Fusion Strike,Uncommon,Yuu Nishida,Trainer,Supporter,Non-Holo,1
+Roxanne,Astral Radiance,Uncommon,Megumi Mizutani,Trainer,Supporter,Non-Holo,1
+Bianca's Devotion,Temporal Forces,Uncommon,En Morikura,Trainer,Supporter,Non-Holo,1
+Iono,Paldea Evolved,Uncommon,Sanosuke Sakuma,Trainer,Supporter,Non-Holo,1
+Eri,Temporal Forces,Uncommon,GOSSAN,Trainer,Supporter,Non-Holo,1
 Dendra,Paldea Evolved,Uncommon,yuu,Trainer,Supporter,Reverse,1
-Cosmog,Celebrations,Rare,kirisAki,Pokemon,Purple,No,1
-Dancer,Fusion Strike,Uncommon,Sanosuke Sakuma,Trainer,Supporter,No,1
-Grant,Astral Radiance,Uncommon,Hideki Ishikawa,Trainer,Supporter,No,1
-Ciphermaniac's Codebreaking,Temporal Forces,Uncommon,Taira Akitsu,Trainer,Supporter,No,1
+Cosmog,Celebrations,Rare,kirisAki,Pokemon,Purple,Non-Holo,1
+Dancer,Fusion Strike,Uncommon,Sanosuke Sakuma,Trainer,Supporter,Non-Holo,1
+Grant,Astral Radiance,Uncommon,Hideki Ishikawa,Trainer,Supporter,Non-Holo,1
+Ciphermaniac's Codebreaking,Temporal Forces,Uncommon,Taira Akitsu,Trainer,Supporter,Non-Holo,1
 Drampa,Temporal Forces,Rare,Toshinao Aoki,Pokemon,White,Holo,1
 Magcargo,Temporal Forces,Rare,Mitsuhiro Arita,Pokemon,Red,Holo,1
 Steelix,Fusion Strike,Rare Holo,Ryuta Fuse,Pokemon,Brown,Holo,1
@@ -19,236 +19,236 @@ Smoliv,Shiny Treasure ex,N/A,Shibuzoh.,Pokemon,Green,Holo,1
 Arboliva,Scarlet & Violet,Rare,Kouki Saitou,Pokemon,Green,Holo,1
 Eldegoss,Evolving Skies,Rare Holo,Kouki Saitou,Pokemon,Green,Holo,1
 Feraligatr,Temporal Forces,Rare,GOSSAN,Pokemon,Blue,Holo,1
-Pincurchin,Paldea Evolved,Common,Yuka Morii,Pokemon,Yellow,No,1
-Drilbur,Vivid Voltage,Common,Yuka Morii,Pokemon,Brown,No,1
-Baltoy,Silver Tempest,Common,Yuka Morii,Pokemon,Brown,No,1
-Machop,Lost Origin,Common,Yuka Morii,Pokemon,Brown,No,1
-Seedot,Lost Origin,Common,Yuka Morii,Pokemon,Green,No,1
-Grubbin,Fusion Strike,Common,Yuka Morii,Pokemon,Green,No,1
-Staryu,Brilliant Stars,Common,Yuka Morii,Pokemon,Blue,No,1
-Wigglytuff,Fusion Strike,Uncommon,Asako Ito,Pokemon,Purple,No,1
-Swirlix,Silver Tempest,Common,Asako Ito,Pokemon,Purple,No,1
-Espurr,Silver Tempest,Common,Asako Ito,Pokemon,Purple,No,1
-Murkrow,Lost Origin,Common,Yuka Morii,Pokemon,Black,No,1
-Hoothoot,Astral Radiance,Common,Pani Kobayashi,Pokemon,White,No,1
-Galarian Stunfisk,Lost Origin,Uncommon,Shigenori Negishi,Pokemon,White,No,1
-Rufflet,Silver Tempest,Common,kurumitsu,Pokemon,White,No,1
-Chatot,Temporal Forces,Common,GOTO minori,Pokemon,White,No,1
-Stantler,Astral Radiance,Common,Teeziro,Pokemon,White,No,1
-Durant,Fusion Strike,Common,Shin Nagasawa,Pokemon,White,No,1
-Bronzor,Lost Origin,Common,Tomokazu Komiya,Pokemon,White,No,2
-Landorus,Lost Origin,Rare,KEIICHIRO ITO,Pokemon,Brown,No,1
-Hippopotas,Evolving Skies,Common,Yuya Oka,Pokemon,Brown,No,2
-Stunfisk,Silver Tempest,Common,Shinji Kanda,Pokemon,Yellow,No,2
-Dewpider,Burning Shadows,Common,Kouki Saitou,Pokemon,Green,No,1
-Venomoth,Silver Tempest,Uncommon,Kagemaru Himeno,Pokemon,Green,No,1
-Kricketot,Astral Radiance,Common,Masakazu Fukuda,Pokemon,Green,No,1
-Simisage,Fusion Strike,Uncommon,Akira Komayama,Pokemon,Green,No,1
-Durant,Silver Tempest,Common,Yuya Oka,Pokemon,Green,No,2
-Wimpod,Burning Shadows,Common,Kagemaru Himeno,Pokemon,Green,No,1
-Gloom,Lost Origin,Uncommon,Tomokazu Komiya,Pokemon,Green,No,1
-Bramblin,Temporal Forces,Common,Tetsu Kayama,Pokemon,Green,No,2
-Tympole,Evolving Skies,Common,Mina Nakai,Pokemon,Blue,No,1
-Snover,Lost Origin,Common,Mitsuhiro Arita,Pokemon,Blue,No,1
-Beartic,Brilliant Stars,Uncommon,Rianti Hidayat,Pokemon,Blue,No,1
-Drowzee,Evolving Skies,Common,nagimiso,Pokemon,Purple,No,1
-Hypno,Silver Tempest,Uncommon,Shinji Kanda,Pokemon,Purple,No,2
-Jynx,Lost Origin,Common,Nagomi Nijo,Pokemon,Purple,No,1
-Seviper,Lost Origin,Uncommon,Tomokazu Komiya,Pokemon,Black,No,1
-Snow Leaf Badge,Evolving Skies,Uncommon,Studio Bora Inc.,Trainer,Item,No,2
-Lucky Ice Pop,Evolving Skies,Uncommon,inose yukie,Trainer,Item,No,1
-Windup Arm,Lost Origin,Uncommon,Toyste Beach,Trainer,Item,No,1
-Leafy Camo Poncho,Silver Tempest,Uncommon,Studio Bora Inc.,Trainer,Item,No,1
-Tool Box,Lost Origin,Uncommon,AYUMI ODASHIMA,Trainer,Item,No,2
-Mirage Gate,Lost Origin,Uncommon,sadaji,Trainer,Item,No,1
-Echoing Horn,Chilling Reign,Uncommon,Studio Bora Inc.,Trainer,Item,No,2
-Heavy Baton,Temporal Forces,Uncommon,Ayaka Yoshida,Trainer,Pokemon Tool,No,1
-Practice Studio,Paldea Evolved,Uncommon,AYUMI ODASHIMA,Trainer,Stadium,No,1
-Full Metal Lab,Temporal Forces,Uncommon,AYUMI ODASHIMA,Trainer,Stadium,No,1
-Lake Acuity,Lost Origin,Uncommon,Oswaldo KATO,Trainer,Stadium,No,1
-Calamitous Snowy Mountain,Paldea Evolved,Uncommon,AYUMI ODASHIMA,Trainer,Stadium,No,1
+Pincurchin,Paldea Evolved,Common,Yuka Morii,Pokemon,Yellow,Non-Holo,1
+Drilbur,Vivid Voltage,Common,Yuka Morii,Pokemon,Brown,Non-Holo,1
+Baltoy,Silver Tempest,Common,Yuka Morii,Pokemon,Brown,Non-Holo,1
+Machop,Lost Origin,Common,Yuka Morii,Pokemon,Brown,Non-Holo,1
+Seedot,Lost Origin,Common,Yuka Morii,Pokemon,Green,Non-Holo,1
+Grubbin,Fusion Strike,Common,Yuka Morii,Pokemon,Green,Non-Holo,1
+Staryu,Brilliant Stars,Common,Yuka Morii,Pokemon,Blue,Non-Holo,1
+Wigglytuff,Fusion Strike,Uncommon,Asako Ito,Pokemon,Purple,Non-Holo,1
+Swirlix,Silver Tempest,Common,Asako Ito,Pokemon,Purple,Non-Holo,1
+Espurr,Silver Tempest,Common,Asako Ito,Pokemon,Purple,Non-Holo,1
+Murkrow,Lost Origin,Common,Yuka Morii,Pokemon,Black,Non-Holo,1
+Hoothoot,Astral Radiance,Common,Pani Kobayashi,Pokemon,White,Non-Holo,1
+Galarian Stunfisk,Lost Origin,Uncommon,Shigenori Negishi,Pokemon,White,Non-Holo,1
+Rufflet,Silver Tempest,Common,kurumitsu,Pokemon,White,Non-Holo,1
+Chatot,Temporal Forces,Common,GOTO minori,Pokemon,White,Non-Holo,1
+Stantler,Astral Radiance,Common,Teeziro,Pokemon,White,Non-Holo,1
+Durant,Fusion Strike,Common,Shin Nagasawa,Pokemon,White,Non-Holo,1
+Bronzor,Lost Origin,Common,Tomokazu Komiya,Pokemon,White,Non-Holo,2
+Landorus,Lost Origin,Rare,KEIICHIRO ITO,Pokemon,Brown,Non-Holo,1
+Hippopotas,Evolving Skies,Common,Yuya Oka,Pokemon,Brown,Non-Holo,2
+Stunfisk,Silver Tempest,Common,Shinji Kanda,Pokemon,Yellow,Non-Holo,2
+Dewpider,Burning Shadows,Common,Kouki Saitou,Pokemon,Green,Non-Holo,1
+Venomoth,Silver Tempest,Uncommon,Kagemaru Himeno,Pokemon,Green,Non-Holo,1
+Kricketot,Astral Radiance,Common,Masakazu Fukuda,Pokemon,Green,Non-Holo,1
+Simisage,Fusion Strike,Uncommon,Akira Komayama,Pokemon,Green,Non-Holo,1
+Durant,Silver Tempest,Common,Yuya Oka,Pokemon,Green,Non-Holo,2
+Wimpod,Burning Shadows,Common,Kagemaru Himeno,Pokemon,Green,Non-Holo,1
+Gloom,Lost Origin,Uncommon,Tomokazu Komiya,Pokemon,Green,Non-Holo,1
+Bramblin,Temporal Forces,Common,Tetsu Kayama,Pokemon,Green,Non-Holo,2
+Tympole,Evolving Skies,Common,Mina Nakai,Pokemon,Blue,Non-Holo,1
+Snover,Lost Origin,Common,Mitsuhiro Arita,Pokemon,Blue,Non-Holo,1
+Beartic,Brilliant Stars,Uncommon,Rianti Hidayat,Pokemon,Blue,Non-Holo,1
+Drowzee,Evolving Skies,Common,nagimiso,Pokemon,Purple,Non-Holo,1
+Hypno,Silver Tempest,Uncommon,Shinji Kanda,Pokemon,Purple,Non-Holo,2
+Jynx,Lost Origin,Common,Nagomi Nijo,Pokemon,Purple,Non-Holo,1
+Seviper,Lost Origin,Uncommon,Tomokazu Komiya,Pokemon,Black,Non-Holo,1
+Snow Leaf Badge,Evolving Skies,Uncommon,Studio Bora Inc.,Trainer,Item,Non-Holo,2
+Lucky Ice Pop,Evolving Skies,Uncommon,inose yukie,Trainer,Item,Non-Holo,1
+Windup Arm,Lost Origin,Uncommon,Toyste Beach,Trainer,Item,Non-Holo,1
+Leafy Camo Poncho,Silver Tempest,Uncommon,Studio Bora Inc.,Trainer,Item,Non-Holo,1
+Tool Box,Lost Origin,Uncommon,AYUMI ODASHIMA,Trainer,Item,Non-Holo,2
+Mirage Gate,Lost Origin,Uncommon,sadaji,Trainer,Item,Non-Holo,1
+Echoing Horn,Chilling Reign,Uncommon,Studio Bora Inc.,Trainer,Item,Non-Holo,2
+Heavy Baton,Temporal Forces,Uncommon,Ayaka Yoshida,Trainer,Pokemon Tool,Non-Holo,1
+Practice Studio,Paldea Evolved,Uncommon,AYUMI ODASHIMA,Trainer,Stadium,Non-Holo,1
+Full Metal Lab,Temporal Forces,Uncommon,AYUMI ODASHIMA,Trainer,Stadium,Non-Holo,1
+Lake Acuity,Lost Origin,Uncommon,Oswaldo KATO,Trainer,Stadium,Non-Holo,1
+Calamitous Snowy Mountain,Paldea Evolved,Uncommon,AYUMI ODASHIMA,Trainer,Stadium,Non-Holo,1
 Shopping Center,Evolving Skies,Uncommon,Oswaldo KATO,Trainer,Stadium,Reverse,1
 Jet Energy,Paldea Evolved,Uncommon,undefined,Energy,Colorless,Reverse,1
-V Guard Energy,Silver Tempest,Uncommon,undefined,Energy,Colorless,No,1
+V Guard Energy,Silver Tempest,Uncommon,undefined,Energy,Colorless,Non-Holo,1
 Regenerative Energy,Silver Tempest,Uncommon,undefined,Energy,Colorless,Reverse,1
 Lapras VMAX,Sword & Shield,Rare Holo VMAX,5ban Graphics,Pokemon,Full-Art,Holo,1
-Umbreon VMAX,Start Deck 100,N/A,AKIRA EGAWA,Pokemon,Full-Art,No,1
+Umbreon VMAX,Start Deck 100,N/A,AKIRA EGAWA,Pokemon,Full-Art,Non-Holo,1
 Chien-Pao ex,Paldea Evolved,Hyper Rare,aky CG Works,Pokemon,Full-Art,Holo,1
 Altaria,Silver Tempest,Trainer Gallery Rare Holo,Yuu Nishida,Pokemon,Full-Art,Holo,1
 Deerling,Temporal Forces,Illustration Rare,Susumu Maeya,Pokemon,Full-Art,Holo,1
 Reshiram V,Silver Tempest,Rare Holo V,N-DESIGN Inc.,Pokemon,Full-Art,Holo,1
 Blaziken V,Chilling Reign,Rare Holo V,Ayaka Yoshida,Pokemon,Full-Art,Holo,1
 Passimian,Silver Tempest,Trainer Gallery Rare Holo,nagimiso,Pokemon,Full-Art,Holo,1
-Spinda,Silver Tempest,Common,Souichirou Gunjima,Pokemon,White,No,1
-Spinda,Paradox Rift,Common,Masakazu Fukuda,Pokemon,White,No,1
-Chansey,Fusion Strike,Common,miki kudo,Pokemon,White,No,1
-Blissey,Scarlet & Violet,Uncommon,chibi,Pokemon,White,No,1
-Meltan,Temporal Forces,Common,Taiga Kayama,Pokemon,White,No,1
-Beldum,Temporal Forces,Common,hatachu,Pokemon,White,No,2
-Metang,Temporal Forces,Common,Nobuhiro Imagawa,Pokemon,White,No,1
-Metagross,Temporal Forces,Uncommon,Nurikabe,Pokemon,White,No,1
-Doublade,Paradox Rift,Common,Bun Toujo,Pokemon,White,No,1
-Excadrill,Fusion Strike,Uncommon,Lee HyunJung,Pokemon,White,No,1
-Ferroseed,Silver Tempest,Common,ryoma uratsuka,Pokemon,White,No,1
-Pelipper,Paldea Evolved,Uncommon,Shinya Komatsu,Pokemon,White,No,1
-Klefki,Fusion Strike,Common,MAHOU,Pokemon,White,No,1
-Bidoof,Brilliant Stars,Common,Oswaldo KATO,Pokemon,White,No,1
-Smeargle,Silver Tempest,Common,Mizue,Pokemon,White,No,1
-Smeargle,Evolving Skies,Rare,Kouki Saitou,Pokemon,White,No,1
-Stoutland,Evolving Skies,Rare,Naoki Saito,Pokemon,White,No,1
-Togedemaru,Silver Tempest,Common,kawayoo,Pokemon,White,No,2
-Rufflet,Evolving Skies,Common,0313,Pokemon,White,No,1
-Rufflet,Silver Tempest,Common,kurumitsu,Pokemon,White,No,1
+Spinda,Silver Tempest,Common,Souichirou Gunjima,Pokemon,White,Non-Holo,1
+Spinda,Paradox Rift,Common,Masakazu Fukuda,Pokemon,White,Non-Holo,1
+Chansey,Fusion Strike,Common,miki kudo,Pokemon,White,Non-Holo,1
+Blissey,Scarlet & Violet,Uncommon,chibi,Pokemon,White,Non-Holo,1
+Meltan,Temporal Forces,Common,Taiga Kayama,Pokemon,White,Non-Holo,1
+Beldum,Temporal Forces,Common,hatachu,Pokemon,White,Non-Holo,2
+Metang,Temporal Forces,Common,Nobuhiro Imagawa,Pokemon,White,Non-Holo,1
+Metagross,Temporal Forces,Uncommon,Nurikabe,Pokemon,White,Non-Holo,1
+Doublade,Paradox Rift,Common,Bun Toujo,Pokemon,White,Non-Holo,1
+Excadrill,Fusion Strike,Uncommon,Lee HyunJung,Pokemon,White,Non-Holo,1
+Ferroseed,Silver Tempest,Common,ryoma uratsuka,Pokemon,White,Non-Holo,1
+Pelipper,Paldea Evolved,Uncommon,Shinya Komatsu,Pokemon,White,Non-Holo,1
+Klefki,Fusion Strike,Common,MAHOU,Pokemon,White,Non-Holo,1
+Bidoof,Brilliant Stars,Common,Oswaldo KATO,Pokemon,White,Non-Holo,1
+Smeargle,Silver Tempest,Common,Mizue,Pokemon,White,Non-Holo,1
+Smeargle,Evolving Skies,Rare,Kouki Saitou,Pokemon,White,Non-Holo,1
+Stoutland,Evolving Skies,Rare,Naoki Saito,Pokemon,White,Non-Holo,1
+Togedemaru,Silver Tempest,Common,kawayoo,Pokemon,White,Non-Holo,2
+Rufflet,Evolving Skies,Common,0313,Pokemon,White,Non-Holo,1
+Rufflet,Silver Tempest,Common,kurumitsu,Pokemon,White,Non-Holo,1
 Rufflet,Silver Tempest,Common,kurumitsu,Pokemon,White,Reverse,1
-Braviary,Evolving Skies,Uncommon,SATOSHI NAKAI,Pokemon,White,No,2
+Braviary,Evolving Skies,Uncommon,SATOSHI NAKAI,Pokemon,White,Non-Holo,2
 Copperajah,Fusion Strike,Uncommon,KEIICHIRO ITO,Pokemon,White,Reverse,1
 Gumshoos,Obsidian Flames,Uncommon,Eri Yamaki,Pokemon,White,Reverse,1
-Gumshoos,Obsidian Flames,Uncommon,Eri Yamaki,Pokemon,White,No,1
-Miltank,Paradox Rift,Common,sowsow,Pokemon,White,No,1
-Rookidee,Paldea Evolved,Common,Naoki Saito,Pokemon,White,No,1
+Gumshoos,Obsidian Flames,Uncommon,Eri Yamaki,Pokemon,White,Non-Holo,1
+Miltank,Paradox Rift,Common,sowsow,Pokemon,White,Non-Holo,1
+Rookidee,Paldea Evolved,Common,Naoki Saito,Pokemon,White,Non-Holo,1
 Kecleon,Chilling Reign,Rare,KIYOTAKA OSHIYAMA,Pokemon,White,Reverse,1
-Ponyta,Silver Tempest,Common,Teeziro,Pokemon,Red,No,1
-Ponyta,Temporal Forces,Common,takashi shiraishi,Pokemon,Red,No,1
-Growlithe,Fusion Strike,Common,Narumi Sato,Pokemon,Red,No,1
-Arcanine,Silver Tempest,Rare,OKACHEKE,Pokemon,Red,No,1
-Litten,Silver Tempest,Common,Narumi Sato,Pokemon,Red,No,1
-Litleo,Evolving Skies,Common,Misa Tsutsui,Pokemon,Red,No,1
-Talonflame,Silver Tempest,Rare,KEIICHIRO ITO,Pokemon,Red,No,1
-Torkoal,Scarlet & Violet,Uncommon,Kurata So,Pokemon,Red,No,1
-Fennekin,Silver Tempest,Common,ryoma uratsuka,Pokemon,Red,No,3
-Pansear,Fusion Strike,Common,Misa Tsutsui,Pokemon,Red,No,1
-Ninetales,Silver Tempest,Uncommon,Shiburingaru,Pokemon,Red,No,2
-Sizzlipede,Temporal Forces,Common,Yukiko Baba,Pokemon,Red,No,1
+Ponyta,Silver Tempest,Common,Teeziro,Pokemon,Red,Non-Holo,1
+Ponyta,Temporal Forces,Common,takashi shiraishi,Pokemon,Red,Non-Holo,1
+Growlithe,Fusion Strike,Common,Narumi Sato,Pokemon,Red,Non-Holo,1
+Arcanine,Silver Tempest,Rare,OKACHEKE,Pokemon,Red,Non-Holo,1
+Litten,Silver Tempest,Common,Narumi Sato,Pokemon,Red,Non-Holo,1
+Litleo,Evolving Skies,Common,Misa Tsutsui,Pokemon,Red,Non-Holo,1
+Talonflame,Silver Tempest,Rare,KEIICHIRO ITO,Pokemon,Red,Non-Holo,1
+Torkoal,Scarlet & Violet,Uncommon,Kurata So,Pokemon,Red,Non-Holo,1
+Fennekin,Silver Tempest,Common,ryoma uratsuka,Pokemon,Red,Non-Holo,3
+Pansear,Fusion Strike,Common,Misa Tsutsui,Pokemon,Red,Non-Holo,1
+Ninetales,Silver Tempest,Uncommon,Shiburingaru,Pokemon,Red,Non-Holo,2
+Sizzlipede,Temporal Forces,Common,Yukiko Baba,Pokemon,Red,Non-Holo,1
 Centiskorch,Fusion Strike,Rare,Hasuno,Pokemon,Red,Reverse,1
 Growlithe,Scarlet & Violet,Common,kawayoo,Pokemon,Red,Reverse,1
-Gastrodon,Lost Origin,Uncommon,Sanosuke Sakuma,Pokemon,Brown,No,1
-Falinks,Lost Origin,Common,sowsow,Pokemon,Brown,No,1
-Falinks,Fusion Strike,Uncommon,Akira Komayama,Pokemon,Brown,No,1
-Minior,Paradox Rift,Uncommon,OKUBO,Pokemon,Brown,No,1
-Mienshao,Lost Origin,Uncommon,Shibuzoh.,Pokemon,Brown,No,1
-Hitmontop,Brilliant Stars,Uncommon,ryoma uratsuka,Pokemon,Brown,No,1
-Excadrill,Temporal Forces,Uncommon,Bun Toujo,Pokemon,Brown,No,1
+Gastrodon,Lost Origin,Uncommon,Sanosuke Sakuma,Pokemon,Brown,Non-Holo,1
+Falinks,Lost Origin,Common,sowsow,Pokemon,Brown,Non-Holo,1
+Falinks,Fusion Strike,Uncommon,Akira Komayama,Pokemon,Brown,Non-Holo,1
+Minior,Paradox Rift,Uncommon,OKUBO,Pokemon,Brown,Non-Holo,1
+Mienshao,Lost Origin,Uncommon,Shibuzoh.,Pokemon,Brown,Non-Holo,1
+Hitmontop,Brilliant Stars,Uncommon,ryoma uratsuka,Pokemon,Brown,Non-Holo,1
+Excadrill,Temporal Forces,Uncommon,Bun Toujo,Pokemon,Brown,Non-Holo,1
 Lucario,Brilliant Stars,Rare Holo,GIDORA,Pokemon,Brown,Reverse,1
-Regirock,Astral Radiance,Rare,Souichirou Gunjima,Pokemon,Brown,No,1
-Kubfu,Chilling Reign,Common,Kouki Saitou,Pokemon,Brown,No,1
-Mudsdale,Temporal Forces,Uncommon,Naoyo Kimura,Pokemon,Brown,No,1
-Passimian,Chilling Reign,Rare,Akira Komayama,Pokemon,Brown,No,1
-Armaldo,Silver Tempest,Rare,Souichirou Gunjima,Pokemon,Brown,No,1
-Golett,Temporal Forces,Common,miki kudo,Pokemon,Brown,No,1
-Golurk,Temporal Forces,Uncommon,Oku,Pokemon,Brown,No,1
-Meditite,Lost Origin,Common,0313,Pokemon,Brown,No,1
-Gliscor,Lost Origin,Rare,Shiburingaru,Pokemon,Brown,No,1
-Makuhita,Lost Origin,Common,Shigenori Negishi,Pokemon,Brown,No,1
-Hariyama,Lost Origin,Uncommon,Scav,Pokemon,Brown,No,1
-Binacle,Lost Origin,Common,Scav,Pokemon,Brown,No,1
-Mienfoo,Lost Origin,Common,yuu,Pokemon,Brown,No,1
-Onix,Fusion Strike,Common,KEIICHIRO ITO,Pokemon,Brown,No,1
+Regirock,Astral Radiance,Rare,Souichirou Gunjima,Pokemon,Brown,Non-Holo,1
+Kubfu,Chilling Reign,Common,Kouki Saitou,Pokemon,Brown,Non-Holo,1
+Mudsdale,Temporal Forces,Uncommon,Naoyo Kimura,Pokemon,Brown,Non-Holo,1
+Passimian,Chilling Reign,Rare,Akira Komayama,Pokemon,Brown,Non-Holo,1
+Armaldo,Silver Tempest,Rare,Souichirou Gunjima,Pokemon,Brown,Non-Holo,1
+Golett,Temporal Forces,Common,miki kudo,Pokemon,Brown,Non-Holo,1
+Golurk,Temporal Forces,Uncommon,Oku,Pokemon,Brown,Non-Holo,1
+Meditite,Lost Origin,Common,0313,Pokemon,Brown,Non-Holo,1
+Gliscor,Lost Origin,Rare,Shiburingaru,Pokemon,Brown,Non-Holo,1
+Makuhita,Lost Origin,Common,Shigenori Negishi,Pokemon,Brown,Non-Holo,1
+Hariyama,Lost Origin,Uncommon,Scav,Pokemon,Brown,Non-Holo,1
+Binacle,Lost Origin,Common,Scav,Pokemon,Brown,Non-Holo,1
+Mienfoo,Lost Origin,Common,yuu,Pokemon,Brown,Non-Holo,1
+Onix,Fusion Strike,Common,KEIICHIRO ITO,Pokemon,Brown,Non-Holo,1
 Toxicroak,Paldea Evolved,Uncommon,Yuya Oka,Pokemon,Brown,Reverse,1
 Rhydon,Lost Origin,Uncommon,HYOGONOSUKE,Pokemon,Brown,Reverse,1
 Mudbray,Temporal Forces,Common,Narumi Sato,Pokemon,Brown,Reverse,1
 Boldore,Evolving Skies,Uncommon,otumami,Pokemon,Brown,Reverse,1
-Latios,Fusion Strike,Rare,hatachu,Pokemon,Dragon,No,1
-Altaria,Obsidian Flames,Uncommon,kurumitsu,Pokemon,Dragon,No,1
-Bagon,Evolving Skies,Common,ryoma uratsuka,Pokemon,Dragon,No,1
-Noibat,Silver Tempest,Common,Shigenori Negishi,Pokemon,Dragon,No,1
-Noivern,Silver Tempest,Rare,aoki,Pokemon,Dragon,No,1
-Chinchou,Silver Tempest,Common,Miki Tanaka,Pokemon,Yellow,No,1
-Lanturn,Silver Tempest,Uncommon,aoki,Pokemon,Yellow,No,1
-Pikachu,Silver Tempest,Common,Souichirou Gunjima,Pokemon,Yellow,No,1
-Pikachu,Lost Origin,Common,kurumitsu,Pokemon,Yellow,No,1
-Raichu,Paldea Evolved,Uncommon,Teeziro,Pokemon,Yellow,No,1
-Plusle,Fusion Strike,Common,Megumi Higuchi,Pokemon,Yellow,No,1
-Minun,Paradox Rift,Common,Narumi Sato,Pokemon,Yellow,No,1
-Pawmi,Paldea Evolved,Common,sowsow,Pokemon,Yellow,No,1
-Yamper,Temporal Forces,Common,kurumitsu,Pokemon,Yellow,No,1
+Latios,Fusion Strike,Rare,hatachu,Pokemon,Dragon,Non-Holo,1
+Altaria,Obsidian Flames,Uncommon,kurumitsu,Pokemon,Dragon,Non-Holo,1
+Bagon,Evolving Skies,Common,ryoma uratsuka,Pokemon,Dragon,Non-Holo,1
+Noibat,Silver Tempest,Common,Shigenori Negishi,Pokemon,Dragon,Non-Holo,1
+Noivern,Silver Tempest,Rare,aoki,Pokemon,Dragon,Non-Holo,1
+Chinchou,Silver Tempest,Common,Miki Tanaka,Pokemon,Yellow,Non-Holo,1
+Lanturn,Silver Tempest,Uncommon,aoki,Pokemon,Yellow,Non-Holo,1
+Pikachu,Silver Tempest,Common,Souichirou Gunjima,Pokemon,Yellow,Non-Holo,1
+Pikachu,Lost Origin,Common,kurumitsu,Pokemon,Yellow,Non-Holo,1
+Raichu,Paldea Evolved,Uncommon,Teeziro,Pokemon,Yellow,Non-Holo,1
+Plusle,Fusion Strike,Common,Megumi Higuchi,Pokemon,Yellow,Non-Holo,1
+Minun,Paradox Rift,Common,Narumi Sato,Pokemon,Yellow,Non-Holo,1
+Pawmi,Paldea Evolved,Common,sowsow,Pokemon,Yellow,Non-Holo,1
+Yamper,Temporal Forces,Common,kurumitsu,Pokemon,Yellow,Non-Holo,1
 Vikavolt,Temporal Forces,Uncommon,Hitoshi Ariga,Pokemon,Yellow,Reverse,1
-Vikavolt,Temporal Forces,Uncommon,Hitoshi Ariga,Pokemon,Yellow,No,1
+Vikavolt,Temporal Forces,Uncommon,Hitoshi Ariga,Pokemon,Yellow,Non-Holo,1
 Wattrel,Paldea Evolved,Common,Shibuzoh.,Pokemon,Yellow,Reverse,1
-Lanturn,Evolving Skies,Uncommon,ryoma uratsuka,Pokemon,Yellow,No,1
-Emolga,Silver Tempest,Common,sowsow,Pokemon,Yellow,No,2
-Shinx,Brilliant Stars,Common,Mizue,Pokemon,Yellow,No,1
-Luxio,Brilliant Stars,Uncommon,kurumitsu,Pokemon,Yellow,No,1
-Electrike,Lost Origin,Common,otumami,Pokemon,Yellow,No,1
-Electabuzz,Temporal Forces,Common,Uta,Pokemon,Yellow,No,1
-Mareep,Chilling Reign,Common,Miki Tanaka,Pokemon,Yellow,No,1
-Eelektrik,Obsidian Flames,Common,Souichirou Gunjima,Pokemon,Yellow,No,1
-Voltorb,Paldea Evolved,Common,sui,Pokemon,Yellow,No,1
-Magnemite,Obsidian Flames,Common,Masakazu Fukuda,Pokemon,Yellow,No,1
-Magneton,Scarlet & Violet,Common,Shiburingaru,Pokemon,Yellow,No,1
+Lanturn,Evolving Skies,Uncommon,ryoma uratsuka,Pokemon,Yellow,Non-Holo,1
+Emolga,Silver Tempest,Common,sowsow,Pokemon,Yellow,Non-Holo,2
+Shinx,Brilliant Stars,Common,Mizue,Pokemon,Yellow,Non-Holo,1
+Luxio,Brilliant Stars,Uncommon,kurumitsu,Pokemon,Yellow,Non-Holo,1
+Electrike,Lost Origin,Common,otumami,Pokemon,Yellow,Non-Holo,1
+Electabuzz,Temporal Forces,Common,Uta,Pokemon,Yellow,Non-Holo,1
+Mareep,Chilling Reign,Common,Miki Tanaka,Pokemon,Yellow,Non-Holo,1
+Eelektrik,Obsidian Flames,Common,Souichirou Gunjima,Pokemon,Yellow,Non-Holo,1
+Voltorb,Paldea Evolved,Common,sui,Pokemon,Yellow,Non-Holo,1
+Magnemite,Obsidian Flames,Common,Masakazu Fukuda,Pokemon,Yellow,Non-Holo,1
+Magneton,Scarlet & Violet,Common,Shiburingaru,Pokemon,Yellow,Non-Holo,1
 Toxtricity,Fusion Strike,Rare Holo,Ryuta Fuse,Pokemon,Yellow,Holo,1
 Toxtricity,Obsidian Flames,Rare,Anesaki Dynamic,Pokemon,Yellow,Holo,1
-Petilil,Evolving Skies,Common,Mika Pikazo,Pokemon,Green,No,1
-Lilligant,BREAKpoint,Rare,Shin Nagasawa,Pokemon,Green,No,1
-Lilligant,Evolving Skies,Rare,Kagemaru Himeno,Pokemon,Green,No,1
+Petilil,Evolving Skies,Common,Mika Pikazo,Pokemon,Green,Non-Holo,1
+Lilligant,BREAKpoint,Rare,Shin Nagasawa,Pokemon,Green,Non-Holo,1
+Lilligant,Evolving Skies,Rare,Kagemaru Himeno,Pokemon,Green,Non-Holo,1
 Shaymin,Temporal Forces,Uncommon,Atsushi Furusawa,Pokemon,Green,Reverse,1
-Shaymin,Temporal Forces,Uncommon,Atsushi Furusawa,Pokemon,Green,No,1
-Roselia,Temporal Forces,Common,Tomomi Kaneko,Pokemon,Green,No,1
-Roserade,Temporal Forces,Uncommon,matazo,Pokemon,Green,No,1
-Bounsweet,Obsidian Flames,Common,Kurata So,Pokemon,Green,No,1
+Shaymin,Temporal Forces,Uncommon,Atsushi Furusawa,Pokemon,Green,Non-Holo,1
+Roselia,Temporal Forces,Common,Tomomi Kaneko,Pokemon,Green,Non-Holo,1
+Roserade,Temporal Forces,Uncommon,matazo,Pokemon,Green,Non-Holo,1
+Bounsweet,Obsidian Flames,Common,Kurata So,Pokemon,Green,Non-Holo,1
 Steenee,Obsidian Flames,Common,nagimiso,Pokemon,Green,Reverse,1
 Radiant Tsareena,Silver Tempest,Radiant Rare,Kagemaru Himeno,Pokemon,Green,Holo,1
 Tsareena,Chilling Reign,Rare,Yuu Nishida,Pokemon,Green,Reverse,1
-Phantump,Obsidian Flames,Common,Narumi Sato,Pokemon,Green,No,1
-Toedscool,Scarlet & Violet,Common,Shin Nagasawa,Pokemon,Green,No,1
-Sawsbuck,Temporal Forces,Uncommon,Akira Komayama,Pokemon,Green,No,1
-Scyther,Astral Radiance,Common,GIDORA,Pokemon,Green,No,1
-Scyther,Temporal Forces,Common,Dsuke,Pokemon,Green,No,1
+Phantump,Obsidian Flames,Common,Narumi Sato,Pokemon,Green,Non-Holo,1
+Toedscool,Scarlet & Violet,Common,Shin Nagasawa,Pokemon,Green,Non-Holo,1
+Sawsbuck,Temporal Forces,Uncommon,Akira Komayama,Pokemon,Green,Non-Holo,1
+Scyther,Astral Radiance,Common,GIDORA,Pokemon,Green,Non-Holo,1
+Scyther,Temporal Forces,Common,Dsuke,Pokemon,Green,Non-Holo,1
 Scyther,Obsidian Flames,Common,Shin Nagasawa,Pokemon,Green,Reverse,1
-Heracross,Chilling Reign,Common,Hasuno,Pokemon,Green,No,1
-Yanma,Astral Radiance,Common,OKACHEKE,Pokemon,Green,No,1
-Cottonee,Temporal Forces,Common,Kyoko Umemoto,Pokemon,Green,No,1
-Scovillain,Scarlet & Violet,Uncommon,KEIICHIRO ITO,Pokemon,Green,No,1
-Dolliv,Scarlet & Violet,Common,Mina Nakai,Pokemon,Green,No,1
-Shiftry,Temporal Forces,Uncommon,Souichirou Gunjima,Pokemon,Green,No,1
-Masquerain,Paradox Rift,Uncommon,kantaro,Pokemon,Green,No,1
-Dhelmise,Temporal Forces,Uncommon,Saya Tsuruta,Pokemon,Green,No,1
+Heracross,Chilling Reign,Common,Hasuno,Pokemon,Green,Non-Holo,1
+Yanma,Astral Radiance,Common,OKACHEKE,Pokemon,Green,Non-Holo,1
+Cottonee,Temporal Forces,Common,Kyoko Umemoto,Pokemon,Green,Non-Holo,1
+Scovillain,Scarlet & Violet,Uncommon,KEIICHIRO ITO,Pokemon,Green,Non-Holo,1
+Dolliv,Scarlet & Violet,Common,Mina Nakai,Pokemon,Green,Non-Holo,1
+Shiftry,Temporal Forces,Uncommon,Souichirou Gunjima,Pokemon,Green,Non-Holo,1
+Masquerain,Paradox Rift,Uncommon,kantaro,Pokemon,Green,Non-Holo,1
+Dhelmise,Temporal Forces,Uncommon,Saya Tsuruta,Pokemon,Green,Non-Holo,1
 Venomoth,Silver Tempest,Uncommon,Kagemaru Himeno,Pokemon,Green,Reverse,1
-Lapras,Obsidian Flames,Uncommon,matazo,Pokemon,Blue,No,1
-Mantyke,Paradox Rift,Common,miki kudo,Pokemon,Blue,No,1
+Lapras,Obsidian Flames,Uncommon,matazo,Pokemon,Blue,Non-Holo,1
+Mantyke,Paradox Rift,Common,miki kudo,Pokemon,Blue,Non-Holo,1
 Shellos,Lost Origin,Common,Saya Tsuruta,Pokemon,Blue,Reverse,1
 Cryogonal,Obsidian Flames,Common,kirisAki,Pokemon,Blue,Reverse,1
-Sobble,Chilling Reign,Common,Yuu Nishida,Pokemon,Blue,No,1
-Castform Snowy Form,Chilling Reign,Common,miki kudo,Pokemon,Blue,No,1
-Swanna,Lost Origin,Uncommon,Sekio,Pokemon,Blue,No,1
-Buizel,Brilliant Stars,Common,Tika Matsuno,Pokemon,Blue,No,1
-Seel,Lost Origin,Common,GIDORA,Pokemon,Blue,No,1
-Snorunt,Silver Tempest,Common,sui,Pokemon,Blue,No,1
-Dewpider,Silver Tempest,Common,Naoyo Kimura,Pokemon,Blue,No,1
-Araquanid,Silver Tempest,Uncommon,DOM,Pokemon,Blue,No,1
-Poliwag,Lost Origin,Common,Miki Tanaka,Pokemon,Blue,No,1
-Lumineon,Lost Origin,Uncommon,zig,Pokemon,Blue,No,1
-Carvanha,Temporal Forces,Common,Souichirou Gunjima,Pokemon,Blue,No,1
-Clawitzer,Scarlet & Violet,Common,Souichirou Gunjima,Pokemon,Blue,No,1
+Sobble,Chilling Reign,Common,Yuu Nishida,Pokemon,Blue,Non-Holo,1
+Castform Snowy Form,Chilling Reign,Common,miki kudo,Pokemon,Blue,Non-Holo,1
+Swanna,Lost Origin,Uncommon,Sekio,Pokemon,Blue,Non-Holo,1
+Buizel,Brilliant Stars,Common,Tika Matsuno,Pokemon,Blue,Non-Holo,1
+Seel,Lost Origin,Common,GIDORA,Pokemon,Blue,Non-Holo,1
+Snorunt,Silver Tempest,Common,sui,Pokemon,Blue,Non-Holo,1
+Dewpider,Silver Tempest,Common,Naoyo Kimura,Pokemon,Blue,Non-Holo,1
+Araquanid,Silver Tempest,Uncommon,DOM,Pokemon,Blue,Non-Holo,1
+Poliwag,Lost Origin,Common,Miki Tanaka,Pokemon,Blue,Non-Holo,1
+Lumineon,Lost Origin,Uncommon,zig,Pokemon,Blue,Non-Holo,1
+Carvanha,Temporal Forces,Common,Souichirou Gunjima,Pokemon,Blue,Non-Holo,1
+Clawitzer,Scarlet & Violet,Common,Souichirou Gunjima,Pokemon,Blue,Non-Holo,1
 Croconaw,Temporal Forces,Common,Jerky,Pokemon,Blue,Reverse,1
 Hisuian Basculegion,Astral Radiance,Rare,Akira Komayama,Pokemon,Blue,Reverse,1
 Mimikyu,Paldea Evolved,Rare,Kagemaru Himeno,Pokemon,Purple,Holo,1
-Meditite,Silver Tempest,Common,Jiro Sasumo,Pokemon,Purple,No,1
-Mismagius,Paldea Evolved,Uncommon,Atsushi Furusawa,Pokemon,Purple,No,1
-Jigglypuff,Fusion Strike,Common,Saya Tsuruta,Pokemon,Purple,No,1
-Hisuian Zorua,Lost Origin,Common,Akira Komayama,Pokemon,Purple,No,1
-Ralts,Astral Radiance,Common,Hataya,Pokemon,Purple,No,1
-Kirlia,Silver Tempest,Uncommon,Yukiko Baba,Pokemon,Purple,No,1
-Iron Valiant,Temporal Forces,Uncommon,takuyoa,Pokemon,Purple,No,1
-Indeedee,Silver Tempest,Common,kodama,Pokemon,Purple,No,1
-Latias,Temporal Forces,Uncommon,Takumi Wada,Pokemon,Purple,No,1
-Clefairy,Brilliant Stars,Common,Yukiko Baba,Pokemon,Purple,No,1
-Clefable,Brilliant Stars,Rare,Mizue,Pokemon,Purple,No,1
-Hatenna,Chilling Reign,Common,Sekio,Pokemon,Purple,No,1
-Hattrem,Chilling Reign,Uncommon,miki kudo,Pokemon,Purple,No,1
-Slurpuff,Silver Tempest,Uncommon,Mizue,Pokemon,Purple,No,2
-Swoobat,Evolving Skies,Uncommon,nagimiso,Pokemon,Purple,No,1
-Girafarig,Temporal Forces,Common,matazo,Pokemon,Purple,No,1
-Galarian Corsola,Fusion Strike,Common,Kouki Saitou,Pokemon,Purple,No,1
-Elgyem,Temporal Forces,Common,Tomokazu Komiya,Pokemon,Purple,No,1
+Meditite,Silver Tempest,Common,Jiro Sasumo,Pokemon,Purple,Non-Holo,1
+Mismagius,Paldea Evolved,Uncommon,Atsushi Furusawa,Pokemon,Purple,Non-Holo,1
+Jigglypuff,Fusion Strike,Common,Saya Tsuruta,Pokemon,Purple,Non-Holo,1
+Hisuian Zorua,Lost Origin,Common,Akira Komayama,Pokemon,Purple,Non-Holo,1
+Ralts,Astral Radiance,Common,Hataya,Pokemon,Purple,Non-Holo,1
+Kirlia,Silver Tempest,Uncommon,Yukiko Baba,Pokemon,Purple,Non-Holo,1
+Iron Valiant,Temporal Forces,Uncommon,takuyoa,Pokemon,Purple,Non-Holo,1
+Indeedee,Silver Tempest,Common,kodama,Pokemon,Purple,Non-Holo,1
+Latias,Temporal Forces,Uncommon,Takumi Wada,Pokemon,Purple,Non-Holo,1
+Clefairy,Brilliant Stars,Common,Yukiko Baba,Pokemon,Purple,Non-Holo,1
+Clefable,Brilliant Stars,Rare,Mizue,Pokemon,Purple,Non-Holo,1
+Hatenna,Chilling Reign,Common,Sekio,Pokemon,Purple,Non-Holo,1
+Hattrem,Chilling Reign,Uncommon,miki kudo,Pokemon,Purple,Non-Holo,1
+Slurpuff,Silver Tempest,Uncommon,Mizue,Pokemon,Purple,Non-Holo,2
+Swoobat,Evolving Skies,Uncommon,nagimiso,Pokemon,Purple,Non-Holo,1
+Girafarig,Temporal Forces,Common,matazo,Pokemon,Purple,Non-Holo,1
+Galarian Corsola,Fusion Strike,Common,Kouki Saitou,Pokemon,Purple,Non-Holo,1
+Elgyem,Temporal Forces,Common,Tomokazu Komiya,Pokemon,Purple,Non-Holo,1
 Comfey,Lost Origin,Rare,Aya Kusube,Pokemon,Purple,Reverse,1
-Pawniard,Scarlet & Violet,Common,sowsow,Pokemon,Black,No,1
+Pawniard,Scarlet & Violet,Common,sowsow,Pokemon,Black,Non-Holo,1
 Hisuian Samurott,Astral Radiance,Rare Holo,Kouki Saitou,Pokemon,Black,Holo,1
 Roaring Moon,Temporal Forces,Rare,hncl,Pokemon,Black,Holo,1
-Murkrow,Paldea Evolved,Common,Teeziro,Pokemon,Black,No,1
-Honchkrow,Silver Tempest,Uncommon,aoki,Pokemon,Black,No,1
-Mareanie,Silver Tempest,Common,Yuu Nishida,Pokemon,Black,No,1
-Galarian Zigzagoon,Fusion Strike,Common,Eri Yamaki,Pokemon,Black,No,1
-Sandile,Silver Tempest,Common,0313,Pokemon,Black,No,1
-Whirlipede,Chilling Reign,Uncommon,hatachu,Pokemon,Black,No,1
-Yveltal,Fusion Strike,Rare,kawayoo,Pokemon,Black,No,1
+Murkrow,Paldea Evolved,Common,Teeziro,Pokemon,Black,Non-Holo,1
+Honchkrow,Silver Tempest,Uncommon,aoki,Pokemon,Black,Non-Holo,1
+Mareanie,Silver Tempest,Common,Yuu Nishida,Pokemon,Black,Non-Holo,1
+Galarian Zigzagoon,Fusion Strike,Common,Eri Yamaki,Pokemon,Black,Non-Holo,1
+Sandile,Silver Tempest,Common,0313,Pokemon,Black,Non-Holo,1
+Whirlipede,Chilling Reign,Uncommon,hatachu,Pokemon,Black,Non-Holo,1
+Yveltal,Fusion Strike,Rare,kawayoo,Pokemon,Black,Non-Holo,1
 Mightyena,Temporal Forces,Common,akagi,Pokemon,Black,Reverse,1

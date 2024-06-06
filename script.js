@@ -273,12 +273,14 @@ function populateFilters() {
     const setFilter = document.getElementById('set-filter');
     const detailFilter = document.getElementById('detail-filter');
     const artistFilter = document.getElementById('artist-filter');
+    const holoFilter = document.getElementById('holo-filter');
 
     // Get unique values and sort them alphabetically
     const rarities = [...new Set(csvData.map(card => card.rarity).filter(rarity => rarity && rarity !== "N/A"))].sort();
     const sets = [...new Set(csvData.map(card => card.set).filter(set => set && set !== "N/A"))].sort();
     const details = [...new Set(csvData.map(card => card.detail).filter(detail => detail && detail !== "N/A"))].sort();
     const artists = [...new Set(csvData.map(card => card.artist).filter(artist => artist && artist !== "N/A"))].sort();
+    const holos = [...new Set(csvData.map(card => card.holo).filter(holo => holo && holo !== "N/A"))].sort();
 
     // Populate rarity filter
     rarities.forEach(rarity => {
@@ -310,6 +312,14 @@ function populateFilters() {
         option.value = artist;
         option.textContent = artist;
         artistFilter.appendChild(option);
+    });
+
+    // Populate holo filter
+    holos.forEach(holo => {
+        const option = document.createElement('option');
+        option.value = holo;
+        option.textContent = holo;
+        holoFilter.appendChild(option);
     });
 }
 
