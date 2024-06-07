@@ -233,7 +233,7 @@ button:active {
 }
 
 footer {
-    font-size: 12px;
+    font-size: 16px;
     background-color: var(--footer);
     color: var(--white);
     text-align: left;
@@ -338,5 +338,9 @@ footer a:hover{
     #sorting{
         justify-content: flex-end;
         width: 100%;
+    }
+
+    footer {
+        font-size: 12px;
     }
 }
