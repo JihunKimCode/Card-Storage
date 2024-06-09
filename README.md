@@ -1,11 +1,14 @@
 # [Pokémon Card Storage](https://jihunkimcode.github.io/Card-Storage/)
-A simple webpage for those who wants to see their own cards in digital.
+![cards](https://github.com/JihunKimCode/Card-Storage/assets/135993942/4081f586-0ed0-4d8b-9314-5cb67e52a8aa)
+A simple webpage for those who want to see their cards digitally.
 
 ## Features
-- Filter by Rarity, Set, and Details
+- Upload CSV
+- Filter by Rarity, Set, Details, Artist Name, and Holofoil
 - Sorting
-  - By Alphabetically, by Release Date, by Rarity, and by Price
+  - By Alphabetically, by Artist Name, by Release Date, by Rarity, and by Price
 - Dark Mode
 
 ## How to Use
-- Download or Fork this repository and update csv in your cards
+- Upload CSV so you can see your cards digitally.
+- Use this [CSV template](https://github.com/JihunKimCode/Card-Storage/blob/main/pokemon_cards.csv)
