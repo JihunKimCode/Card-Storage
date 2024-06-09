@@ -30,15 +30,44 @@ function darkmode() {
     localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
 }
 
-// Take CSV data
-async function fetchCSVData(url) {
-    const response = await fetch(url);
-    const data = await response.text();
-    return data.split('\n').slice(1).map(line => {
-        const [name, set, rarity, artist, category, detail, holo, count] = line.split(',');
-        return { name, set, rarity, artist, category, detail, holo, count };
-    });
+// Take CSV file
+function handleFileUpload(event) {
+    const file = event.target.files[0];
+    if (file) {
+        fetchCSVData(file).then(data => {
+            document.getElementById('alert').style.display = 'none';
+            csvData = data;
+            fetchAllSets();
+        });
+    }
 }
+
+// Take CSV data
+async function fetchCSVData(file) {
+    try {
+        const data = await file.text();
+        const lines = data.split('\n').filter(line => line.trim()); // Filter out empty lines
+        
+        // Check if the header has all the required columns
+        const header = lines[0].split(',').map(column => column.trim()); // Trim whitespace
+        const requiredColumns = ['Name', 'Sets', 'Rarity', 'Artist']; // Adjust column names
+        const missingColumns = requiredColumns.filter(column => !header.includes(column));
+
+        if (missingColumns.length > 0) {
+            throw new Error('There are some missing columns in CSV');
+        }
+
+        // Proceed with data processing
+        return lines.slice(1).map(line => {
+            const [name, set, rarity, artist, category, detail, holo, count] = line.split(',').map(item => item.trim()); // Trim whitespace
+            return { name, set, rarity, artist, category, detail, holo, count };
+        });
+    } catch (error) {
+        alert('Error fetching CSV data: ' + error.message);
+        throw error; // Rethrow the error to propagate it further if needed
+    }
+}
+
 
 // Fetch to each sets
 async function fetchSetData(setName) {
@@ -105,6 +134,11 @@ function filterCardsByArtist(cards, artist) {
 
 async function fetchCardByNameAndRarity(name, rarity) {
     const formattedName = name.replace(/\s/g, '.');
+
+    // Check if rarity is undefined
+    if (rarity === undefined) {
+        throw new Error('Rarity parameter is missing');
+    }
 
     try {
         let response = await fetch(`${apiUrl}cards?q=name:${formattedName} rarity:${rarity.replace(/\s/g, '.')}`);
@@ -405,12 +439,6 @@ function sortAndDisplayCards() {
     displayCards();
     enableFilters(); // Re-enable filters after sorting
 }
-
-// Main
-fetchCSVData(csvUrl).then(data => {
-    csvData = data;
-    fetchAllSets();
-});
 
 // Rarity Order for sorting
 const rarityOrder = {

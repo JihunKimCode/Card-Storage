@@ -24,8 +24,8 @@
         <a href="https://github.com/JihunKimCode/Card-Storage" class="btn btn-github" rel="noopener noreferrer" aria-label="GitHub Repository">
             <i class="fa-brands fa-github"></i>
         </a>
-        Pokémon Card Storage
-    </h1>
+        <a href="./index.html" rel="noopener noreferrer" aria-label="GitHub Repository">Pokémon Card Storage</a>
+    </h1>    
     <div id="loading-bar-container">
         <div id="loading-bar"></div>
         <div id="loading-percentage">0%</div>
@@ -62,6 +62,14 @@
         </div>
     </div>
 
+    <div id="alert">
+        <input type="file" id="file-input" accept=".csv" onchange="handleFileUpload(event)">
+        <p>
+            <li><b>CSV MUST have (header and content)</b>: Name, Sets, Rarity, and Artist</li>
+            <li><b>CSV can have</b>: Detail and Holo</li>
+            <li><b><a href="https://github.com/JihunKimCode/Card-Storage/blob/main/pokemon_cards.csv" rel="noopener noreferrer" aria-label="pokemon_cards.csv" target="_blank">Template CSV</a></b></li>
+        </p>
+    </div>
     <div id="card-container"></div>
 
     <div id="popup" class="popup">

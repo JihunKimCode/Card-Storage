@@ -70,6 +70,11 @@ h1{
     color: var(--text);
 }
 
+h1 a{
+    text-decoration: none;
+    color: var(--text);
+}
+
 #controls {
     display: flex;
     justify-content: space-between;
@@ -288,6 +293,15 @@ footer a:hover{
     justify-content: flex-start;
     align-items: center;
     margin: 0 auto;
+}
+
+#alert{
+    margin-left: 20px;
+}
+
+#alert li, #alert a{
+    line-height: 1.5;
+    color: var(--text);
 }
 
 @media only screen and (max-width: 810px) {
