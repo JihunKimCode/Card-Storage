@@ -4,7 +4,7 @@ A simple webpage for those who want to see their cards digitally.
 
 ## Features
 - Upload CSV
-- Filter by Rarity, Set, Details, Artist Name, and Holofoil
+- Filter by Set, Rarity, Artist Name, Details, Holofoil, and Count
 - Sorting
   - By Alphabetically, by Artist Name, by Release Date, by Rarity, and by Price
 - Dark Mode
