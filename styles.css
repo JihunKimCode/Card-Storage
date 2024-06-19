@@ -197,7 +197,7 @@ h1 a{
     color: var(--gray);
 }
 
-#rarity-filter, #set-filter, #detail-filter, #artist-filter, #holo-filter, #sort-by, #order-toggle{
+#rarity-filter, #set-filter, #detail-filter, #artist-filter, #holo-filter, #count-filter, #sort-by, #order-toggle{
     padding: 7px;    
     background: var(--white);
     color: var(--black);
@@ -213,10 +213,11 @@ h1 a{
     margin-right: 6px;
     overflow: hidden;
     width: 105px;
+    height: 36px;
     transition: height .4s ease;
 }
 
-#rarity-filter option, #set-filter option, #detail-filter option,  #artist-filter option, #holo-filter option, #sort-by option{
+#rarity-filter option, #set-filter option, #detail-filter option,  #artist-filter option, #holo-filter option, #count-filter option, #sort-by option{
     font-size: 12px;
 }
 
@@ -348,25 +349,33 @@ footer a:hover{
         width: 85%;
     }
 
-    #controls{
+    #controls {
         flex-direction: column;
         align-items: flex-end;
         margin: 10px;
         margin-left: 15px;
+        /* width: 100%; */
     }
-
-    #rarity-filter, #set-filter, #detail-filter, #artist-filter, #holo-filter, #sort-by, #order-toggle{
+    
+    #rarity-filter, #set-filter, #detail-filter, #artist-filter, #holo-filter, #count-filter, #sort-by, #order-toggle{
         width: 100%;
     }
 
-    #filters{
+    #filters {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
         margin-bottom: 10px;
         width: 100%;
     }
-
+    
     #sorting{
         justify-content: flex-end;
         width: 100%;
+    }
+
+    #order-toggle{
+        margin-right: 0px;
     }
 
     footer {

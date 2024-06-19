@@ -178,7 +178,7 @@ async function fetchAllSets() {
 
 async function createDisplayCardsData() {
     displayCardsData = []; // Clear previous data
-    for (const { name, set, rarity, artist, holo } of filteredCards) {
+    for (const { name, set, rarity, artist, holo, count } of filteredCards) {
         if (!name) {
             console.error('Card name is blank or undefined');
             continue; // Skip this card
@@ -192,7 +192,7 @@ async function createDisplayCardsData() {
             // Store additional information
             const releaseDate = card.set.releaseDate || '';
             const price = getPrice(card) || 0;
-            displayCardsData.push({ ...card, releaseDate, price, holo });
+            displayCardsData.push({ ...card, releaseDate, price, holo, count });
         } else {
             console.error(`Card not found: ${name}`);
         }
@@ -220,10 +220,13 @@ function createCardElement(card) {
         holoSymbol = '🌟';
     }
 
+    // Add count to the card name if count is more than 1
+    const countText = card.count > 1 ? ` (${card.count})` : '';
+
     cardDiv.innerHTML = `
         <img src="${card.images.small}" alt="${card.name}" title="${card.name}" onclick="showPopup('${card.images.large}', '${card.name.replace(/'/g, '’')}')" style="cursor: zoom-in">
         <img src="${card.set.images.logo}" alt="${card.set.name}" title="${card.set.name}" style="width: 100px; cursor: default">
-        <p><b>${card.name}${holoSymbol}</b></p>
+        <p><b>${card.name}${holoSymbol}${countText}</b></p>
         <p>${card.releaseDate || 'N/A'}</p>
         <p>${card.rarity || 'N/A'}</p>
         <p>
@@ -308,6 +311,7 @@ function populateFilters() {
     const detailFilter = document.getElementById('detail-filter');
     const artistFilter = document.getElementById('artist-filter');
     const holoFilter = document.getElementById('holo-filter');
+    const countFilter = document.getElementById('count-filter');
 
     // Sort rarity
     const rarities = [...new Set(csvData.map(card => card.rarity).filter(rarity => rarity && rarity !== "N/A"))]
@@ -317,7 +321,7 @@ function populateFilters() {
         if (orderA === orderB) return a.localeCompare(b);  // Alphabetical comparison if order is the same
         return orderA - orderB;
     });
-    
+
     // Sort them alphabetically
     const sets = [...new Set(csvData.map(card => card.set).filter(set => set && set !== "N/A"))].sort();
     const details = [...new Set(csvData.map(card => card.detail).filter(detail => detail && detail !== "N/A"))].sort();
@@ -363,6 +367,15 @@ function populateFilters() {
         option.textContent = holo;
         holoFilter.appendChild(option);
     });
+
+    // Populate count filter with unique counts from the csvData
+    const counts = [...new Set(csvData.map(card => card.count).filter(count => count && count !== "N/A"))].sort((a, b) => a - b);
+    counts.forEach(count => {
+        const option = document.createElement('option');
+        option.value = count;
+        option.textContent = count;
+        countFilter.appendChild(option);
+    });
 }
 
 document.getElementById('rarity-filter').addEventListener('change', applyFilters);
@@ -370,6 +383,7 @@ document.getElementById('set-filter').addEventListener('change', applyFilters);
 document.getElementById('detail-filter').addEventListener('change', applyFilters);
 document.getElementById('artist-filter').addEventListener('change', applyFilters);
 document.getElementById('holo-filter').addEventListener('change', applyFilters);
+document.getElementById('count-filter').addEventListener('change', applyFilters);
 document.getElementById('sort-by').addEventListener('change', sortAndDisplayCards);
 document.getElementById('order-toggle').addEventListener('click', () => {
     sortOrder *= -1;
@@ -383,17 +397,19 @@ async function applyFilters() {
     const detailFilter = document.getElementById('detail-filter').value;
     const artistFilter = document.getElementById('artist-filter').value;
     const holoFilter = document.getElementById('holo-filter').value;
+    const countFilter = document.getElementById('count-filter').value;
 
     filteredCards = csvData.filter(card => {
         return (!rarityFilter || card.rarity === rarityFilter) &&
                (!setFilter || card.set === setFilter) &&
                (!detailFilter || card.detail === detailFilter) &&
                (!artistFilter || card.artist === artistFilter) &&
-               (!holoFilter || card.holo === holoFilter);
+               (!holoFilter || card.holo === holoFilter) &&
+               (!countFilter || card.count == countFilter);
     });
 
     // Filter displayCardsData directly without fetching new data
-    displayCardsData = filteredCards.map(({ name, set, rarity, artist, holo }) => {
+    displayCardsData = filteredCards.map(({ name, set, rarity, artist, holo, count }) => {
         if (!name) {
             console.error('Card name is blank or undefined');
             return null;
@@ -405,7 +421,7 @@ async function applyFilters() {
         if (card) {
             const releaseDate = card.set.releaseDate || '';
             const price = getPrice(card) || 0;
-            return { ...card, releaseDate, price, holo };
+            return { ...card, releaseDate, price, holo, count };
         } else {
             console.error(`Card not found: ${name}`);
             return null;
