@@ -33,7 +33,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
     background-color: var(--background);
     padding: 0;
     margin: 0;
