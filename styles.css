@@ -210,9 +210,9 @@ h1 a{
     font-family: 'NanumB', sans-serif;
     font-size: 12px;
     font-weight: bold;
-    margin-right: 6px;
+    margin-right: 4px;
     overflow: hidden;
-    width: 105px;
+    width: 100px;
     height: 36px;
     transition: height .4s ease;
 }
@@ -320,7 +320,7 @@ footer a:hover{
     color: var(--text);
 }
 
-@media only screen and (max-width: 810px) {
+@media only screen and (max-width: 860px) {
     .header {
         flex-direction: column;
         align-items: flex-start;
