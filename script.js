@@ -227,6 +227,7 @@ function createCardElement(card) {
         <img src="${card.images.small}" alt="${card.name}" title="${card.name}" onclick="showPopup('${card.images.large}', '${card.name.replace(/'/g, '’')}')" style="cursor: zoom-in">
         <img src="${card.set.images.logo}" alt="${card.set.name}" title="${card.set.name}" style="width: 100px; cursor: default">
         <p><b>${card.name}${holoSymbol}${countText}</b></p>
+        <p><i>Illus. ${card.artist || 'N/A'}</i></p>
         <p>${card.releaseDate || 'N/A'}</p>
         <p>${card.rarity || 'N/A'}</p>
         <p>
