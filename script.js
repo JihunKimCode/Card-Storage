@@ -242,12 +242,10 @@ function createCardElement(card) {
 function getPrice(card) {
     const priceAttributes = ['unlimited', '1stEdition', 'unlimitedHolofoil', '1stEditionHolofoil', 'normal', 'holofoil', 'reverseHolofoil'];
     for (const attr of priceAttributes) {
-        const price = card.tcgplayer?.prices?.[attr]?.mid;
-        if (price !== undefined) {
-            return price;
-        }
+        const price = card.tcgplayer?.prices?.[attr]?.market || card.tcgplayer?.prices?.[attr]?.mid;
+        if (price !== undefined) return price;
     }
-    return 0;
+    return undefined;
 }
 
 function showPopup(image, name) {
