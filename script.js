@@ -77,25 +77,42 @@ async function fetchSetData(setName) {
     cardsData = cardsData.concat(data.data);
 }
 
+const cache = {};
+
 async function fetchCardData(name, set, rarity, artist) {
     const formattedName = name.replace(/\s/g, '.');
+
+    // Check if data is already cached
+    if (cache[formattedName]) {
+        let cards = cache[formattedName];
+        let matchedCards = filterCardsBySet(cards, set);
+        if (matchedCards.length === 0) {
+            matchedCards = cards;
+        }
+        if (rarity !== "N/A" && rarity !== undefined) {
+            matchedCards = filterCardsByRarity(matchedCards, rarity);
+        }
+        if (matchedCards.length > 1 && artist) {
+            matchedCards = filterCardsByArtist(matchedCards, artist);
+        }
+        return matchedCards.length > 0 ? matchedCards[0] : await fetchCardByNameAndRarity(formattedName, rarity);
+    }
 
     try {
         let cards = await fetchCardsByName(formattedName);
         if (!cards) return null;
 
-        // Filter by set name if available
+        // Cache the fetched cards
+        cache[formattedName] = cards;
+
+        // Filter as per the provided criteria
         let matchedCards = filterCardsBySet(cards, set);
         if (matchedCards.length === 0) {
             matchedCards = cards;
         }
-
-        // Further filter by rarity if specified
         if (rarity !== "N/A" && rarity !== undefined) {
             matchedCards = filterCardsByRarity(matchedCards, rarity);
         }
-
-        // Further filter by artist if specified
         if (matchedCards.length > 1 && artist) {
             matchedCards = filterCardsByArtist(matchedCards, artist);
         }
@@ -112,6 +129,7 @@ async function fetchCardData(name, set, rarity, artist) {
 async function fetchCardsByName(name) {
     try {
         let response = await fetch(`${apiUrl}cards?q=name:${name}`);
+        if (!response.ok) throw new Error(`Failed to fetch cards by name: ${name}`);
         let data = await response.json();
         return data.data.length > 0 ? data.data : null;
     } catch (error) {
@@ -135,13 +153,13 @@ function filterCardsByArtist(cards, artist) {
 async function fetchCardByNameAndRarity(name, rarity) {
     const formattedName = name.replace(/\s/g, '.');
 
-    // Check if rarity is undefined
     if (rarity === undefined) {
         throw new Error('Rarity parameter is missing');
     }
 
     try {
         let response = await fetch(`${apiUrl}cards?q=name:${formattedName} rarity:${rarity.replace(/\s/g, '.')}`);
+        if (!response.ok) throw new Error(`Failed to fetch cards by name and rarity: ${name}, ${rarity}`);
         let data = await response.json();
         return data.data.length > 0 ? data.data[0] : await fetchCardsByName(name);
     } catch (error) {
@@ -153,20 +171,34 @@ async function fetchCardByNameAndRarity(name, rarity) {
 // Take all sets information to reduce number of fetches
 async function fetchAllSets() {
     const sets = [...new Set(csvData.map(card => card.set))];
-    const totalSets = sets.length;
-    let loadedSets = 0;
+    const validSets = sets.filter(set => set !== "N/A" && set !== undefined);
 
-    for (let set of sets) {
-        if (set !== "N/A" && set !== undefined) {
-            await fetchSetData(set);
+    // Prepare an array of fetch promises with error handling
+    const fetchPromises = validSets.map(async (set) => {
+        const formattedSetName = set.replace(/\s/g, '.');
+        try {
+            const response = await fetch(`${apiUrl}cards?q=set.name:${formattedSetName}`);
+            if (!response.ok) {
+                throw new Error(`Failed to fetch data for set: ${set}. Status: ${response.status}`);
+            }
+            const data = await response.json();
+            return data.data;
+        } catch (error) {
+            console.error(error);
+            return []; // Return an empty array on error
         }
+    });
 
-        loadedSets++;
-        const progress = (loadedSets / totalSets) * 100;
-        loadingBar.style.width = `${progress}%`;
-        loadingPercentage.innerText = `${Math.round(progress)}%`;
-    }
+    // Execute fetch requests in parallel and gather results
+    const setDataArrays = await Promise.all(fetchPromises);
 
+    // Flatten the array of arrays into a single array
+    const allSetData = setDataArrays.flat();
+    cardsData = cardsData.concat(allSetData);
+
+    // Update the progress bar and UI
+    loadingBar.style.width = '100%';
+    loadingPercentage.innerText = '100%';
     loadingBar.style.display = 'none';
     loadingPercentage.style.display = 'none';
 
