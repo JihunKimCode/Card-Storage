@@ -335,7 +335,7 @@ footer a:hover{
     color: var(--dark-gray);
 }
 
-@media only screen and (max-width: 860px) {
+@media only screen and (max-width: 760px) {
     .header {
         flex-direction: column;
         align-items: flex-start;
