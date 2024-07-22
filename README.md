@@ -1,5 +1,5 @@
 # [Pokémon Card Storage](https://jihunkimcode.github.io/Card-Storage/)
-![cards](https://github.com/JihunKimCode/Card-Storage/assets/135993942/4081f586-0ed0-4d8b-9314-5cb67e52a8aa)
+![cards](https://github.com/user-attachments/assets/b7cb71e8-280b-42ac-8539-3f3fadb6744d)
 A simple webpage for those who want to see their cards digitally.
 
 ## Features
@@ -7,6 +7,7 @@ A simple webpage for those who want to see their cards digitally.
 - Filter by Set, Rarity, Artist Name, Details, Holofoil, and Count
 - Sorting
   - By Alphabetically, by Artist Name, by Release Date, by Rarity, and by Price
+- Toggle Card Information
 - Dark Mode
 
 ## How to Use
