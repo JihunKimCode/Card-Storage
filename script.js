@@ -254,19 +254,22 @@ function createCardElement(card) {
 
     // Add count to the card name if count is more than 1
     const countText = card.count > 1 ? ` (${card.count})` : '';
+    const isVisible = document.querySelector('#visibleButton i').classList.contains('fa-eye');
 
     cardDiv.innerHTML = `
         <img src="${card.images.small}" alt="${card.name}" title="${card.name}" onclick="showPopup('${card.images.large}', '${card.name.replace(/'/g, '’')}')" style="cursor: zoom-in">
-        <img src="${card.set.images.logo}" alt="${card.set.name}" title="${card.set.name}" style="width: 100px; cursor: default">
-        <p><b>${card.name}${holoSymbol}${countText}</b></p>
-        <p><i>Illus. ${card.artist || 'N/A'}</i></p>
-        <p>${card.releaseDate || 'N/A'}</p>
-        <p>${card.rarity || 'N/A'}</p>
-        <p>
-            ${card.tcgplayer && card.tcgplayer.url 
-            ? `<a href="${card.tcgplayer.url}" target="_blank">Avg $${card.price || 'N/A'}</a>` 
-            : `Avg $${card.price || 'N/A'}`}
-        </p>
+        <div class="cardInfo" style="display: ${isVisible ? 'block' : 'none'};">
+            <img src="${card.set.images.logo}" alt="${card.set.name}" title="${card.set.name}" style="width: 100px; cursor: default">
+            <p><b>${card.name}${holoSymbol}${countText}</b></p>
+            <p><i>Illus. ${card.artist || 'N/A'}</i></p>
+            <p>${card.releaseDate || 'N/A'}</p>
+            <p>${card.rarity || 'N/A'}</p>
+            <p>
+                ${card.tcgplayer && card.tcgplayer.url 
+                ? `<a href="${card.tcgplayer.url}" target="_blank">Avg $${card.price || 'N/A'}</a>` 
+                : `Avg $${card.price || 'N/A'}`}
+            </p>
+        </div>
     `;
     cardContainer.appendChild(cardDiv);
 }
@@ -486,6 +489,60 @@ function sortAndDisplayCards() {
     displayCards();
     enableFilters(); // Re-enable filters after sorting
 }
+
+const sortBySelect = document.getElementById('sort-by');
+const orderToggleBtn = document.getElementById('order-toggle');
+let currentIcon = 'fa-arrow-down-short-wide';
+
+function updateIcon() {
+    const selectedValue = sortBySelect.value;
+    const iconElement = orderToggleBtn.querySelector('i');
+
+    if (selectedValue === 'name' || selectedValue === 'artist') {
+        if (currentIcon === 'fa-arrow-down-short-wide' || currentIcon === 'fa-arrow-down-1-9') {
+            currentIcon = 'fa-arrow-down-a-z';
+        } else if (currentIcon === 'fa-arrow-up-short-wide' || currentIcon === 'fa-arrow-up-1-9') {
+            currentIcon = 'fa-arrow-up-a-z';
+        }
+    } else {
+        if (currentIcon === 'fa-arrow-down-a-z' || currentIcon === 'fa-arrow-down-1-9') {
+            currentIcon = 'fa-arrow-down-short-wide';
+        } else if (currentIcon === 'fa-arrow-up-a-z' || currentIcon === 'fa-arrow-up-1-9') {
+            currentIcon = 'fa-arrow-up-short-wide';
+        }
+    } 
+
+    iconElement.className = `fa-solid ${currentIcon}`;
+}
+
+orderToggleBtn.addEventListener('click', () => {
+    if (currentIcon.includes('down')) {
+        currentIcon = currentIcon.replace('down', 'up');
+    } else {
+        currentIcon = currentIcon.replace('up', 'down');
+    }
+    updateIcon();
+});
+
+sortBySelect.addEventListener('change', updateIcon);
+
+document.getElementById('visibleButton').addEventListener('click', function() {
+    const cardInfos = document.querySelectorAll('.cardInfo');
+    const icon = this.querySelector('i');
+    const isVisible = icon.classList.contains('fa-eye');
+
+    cardInfos.forEach(cardInfo => {
+        cardInfo.style.display = isVisible ? 'none' : 'block';
+    });
+
+    if (isVisible) {
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+    } else {
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+    }
+});
 
 // Rarity Order for sorting
 const rarityOrder = {
