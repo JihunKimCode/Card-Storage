@@ -3,7 +3,7 @@ const cardPopup = document.getElementById('card-popup');
 const popupContent = document.getElementById('popup-content');
 const scrollTopButton = document.getElementById('scroll-top');
 const loadingBar = document.getElementById('loading-bar');
-const loadingPercentage = document.getElementById('loading-percentage');
+const loadingContext = document.getElementById('loading-context');
 
 const csvUrl = 'https://raw.githubusercontent.com/JihunKimCode/Card-Storage/main/pokemon_cards.csv';
 const apiUrl = 'https://api.pokemontcg.io/v2/';
@@ -170,6 +170,7 @@ async function fetchCardByNameAndRarity(name, rarity) {
 
 // Take all sets information to reduce number of fetches
 async function fetchAllSets() {
+    loadingContext.innerText = 'Fetching Sets...';
     const sets = [...new Set(csvData.map(card => card.set))];
     const validSets = sets.filter(set => set !== "N/A" && set !== undefined);
 
@@ -197,10 +198,12 @@ async function fetchAllSets() {
     cardsData = cardsData.concat(allSetData);
 
     // Update the progress bar and UI
-    loadingBar.style.width = '100%';
-    loadingPercentage.innerText = '100%';
-    loadingBar.style.display = 'none';
-    loadingPercentage.style.display = 'none';
+    loadingBar.style.width = '0%';
+    loadingContext.innerText = 'Fetched All Sets!';
+
+    setTimeout(() => {
+        loadingContext.innerText = 'Displaying Cards...';
+    }, 2000);
 
     populateFilters();
     filteredCards = csvData;
@@ -233,6 +236,9 @@ async function createDisplayCardsData() {
 
 // Fill the card container
 function displayCards() {
+    loadingBar.style.display = 'none';
+    loadingContext.style.display = 'none';
+
     cardContainer.innerHTML = ''; // Clear the card container
     displayCardsData.forEach(card => {
         createCardElement(card);
