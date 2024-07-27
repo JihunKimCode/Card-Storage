@@ -706,10 +706,6 @@ function updateChart(canvasId, title, data, type = 'bar') {
     });
 }
 
-function closeStats() {
-    document.getElementById('statsModal').style.display = 'none';
-}
-
 // Rarity Order for sorting
 const rarityOrder = {
     "Common": 1,
