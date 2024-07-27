@@ -78,6 +78,7 @@ h1 a{
 #controls {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin: 20px;
 }
 
@@ -201,7 +202,7 @@ h1 a{
     color: var(--gray);
 }
 
-#rarity-filter, #set-filter, #detail-filter, #artist-filter, #holo-filter, #count-filter, #sort-by, #order-toggle, #visibleButton{
+#rarity-filter, #set-filter, #detail-filter, #artist-filter, #holo-filter, #count-filter, #sort-by, #order-toggle, #visibleButton, #statsButton{
     padding: 7px;    
     background: var(--white);
     color: var(--black);
@@ -214,17 +215,18 @@ h1 a{
     font-family: 'NanumB', sans-serif;
     font-size: 12px;
     font-weight: bold;
-    margin-right: 4px;
+    margin-right: 5px;
+    margin-bottom: 5px;
     overflow: hidden;
     height: 36px;
     transition: height .4s ease;
 }
 
-#rarity-filter, #set-filter, #detail-filter, #artist-filter, #holo-filter, #count-filter, #sort-by{
-    width: 90px;
+#rarity-filter, #set-filter, #detail-filter, #artist-filter, #holo-filter, #count-filter{
+    width: 100px;
 }
 
-#order-toggle, #visibleButton{
+#order-toggle, #visibleButton, #statsButton{
     width: 36px;
 }
 
@@ -262,6 +264,39 @@ button:hover{
 button:active {
     box-shadow: none;
     transform: translateY(0);
+}
+
+/* Styles for modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 3% auto;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.chart-container {
+    width: 100%;
+    height: 300px;
+}
+
+/* Ensure canvas fills container */
+canvas {
+    width: 100%;
+    height: 100%;
 }
 
 footer {
@@ -335,7 +370,7 @@ footer a:hover{
     color: var(--dark-gray);
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 600px) {
     .header {
         flex-direction: column;
         align-items: flex-start;
@@ -372,15 +407,23 @@ footer a:hover{
         /* width: 100%; */
     }
     
-    #rarity-filter, #set-filter, #detail-filter, #artist-filter, #holo-filter, #count-filter, #sort-by, #order-toggle, #visibleButton{
+    #rarity-filter, #set-filter, #detail-filter, #artist-filter, #holo-filter, #count-filter, #sort-by, #order-toggle, #visibleButton, #statsButton{
         width: 100%;
     }
 
-    #filters, #sorting {
+    #filters{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 10px;
-        margin-bottom: 10px;
+        grid-gap: 5px;
+        margin-bottom: 5px;
+        width: 100%;
+    }
+
+    #sorting {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 5px;
+        margin-bottom: 5px;
         width: 100%;
     }
 

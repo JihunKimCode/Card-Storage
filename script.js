@@ -213,7 +213,7 @@ async function fetchAllSets() {
 
 async function createDisplayCardsData() {
     displayCardsData = []; // Clear previous data
-    for (const { name, set, rarity, artist, holo, count } of filteredCards) {
+    for (const { name, set, rarity, artist, category, detail, holo, count } of filteredCards) {
         if (!name) {
             console.error('Card name is blank or undefined');
             continue; // Skip this card
@@ -227,7 +227,7 @@ async function createDisplayCardsData() {
             // Store additional information
             const releaseDate = card.set.releaseDate || '';
             const price = getPrice(card) || 0;
-            displayCardsData.push({ ...card, releaseDate, price, holo, count });
+            displayCardsData.push({ ...card, releaseDate, price, detail, holo, count });
         } else {
             console.error(`Card not found: ${name}`);
         }
@@ -297,7 +297,7 @@ function showPopup(image, name) {
     popupImage.src = image;
     document.body.style.overflow = "hidden";
 
-    const close = document.getElementsByClassName('close')[0];
+    const close = document.getElementsByClassName('close')[1];
     close.onclick = function () {
         popup.style.display = "none";
         document.body.style.overflow = "auto";
@@ -449,7 +449,7 @@ async function applyFilters() {
     });
 
     // Filter displayCardsData directly without fetching new data
-    displayCardsData = filteredCards.map(({ name, set, rarity, artist, holo, count }) => {
+    displayCardsData = filteredCards.map(({ name, set, rarity, artist, detail, holo, count }) => {
         if (!name) {
             console.error('Card name is blank or undefined');
             return null;
@@ -461,7 +461,7 @@ async function applyFilters() {
         if (card) {
             const releaseDate = card.set.releaseDate || '';
             const price = getPrice(card) || 0;
-            return { ...card, releaseDate, price, holo, count };
+            return { ...card, releaseDate, price, detail, holo, count };
         } else {
             console.error(`Card not found: ${name}`);
             return null;
@@ -549,6 +549,166 @@ document.getElementById('visibleButton').addEventListener('click', function() {
         icon.classList.add('fa-eye');
     }
 });
+
+// Stats Button Event Listener
+document.getElementById('statsButton').addEventListener('click', showStats);
+
+// Modal Close Event Listener
+document.querySelector('#statsModal .close').addEventListener('click', () => {
+    document.getElementById('statsModal').style.display = 'none';
+    document.body.style.overflow = "auto";
+});
+
+window.addEventListener('click', event => {
+    if (event.target == document.getElementById('statsModal')) {
+        document.getElementById('statsModal').style.display = 'none';
+        document.body.style.overflow = "auto";
+    }
+});
+
+let charts = {}; // Keep track of chart instances
+
+function showStats() {
+    const stats = calculateStats(displayCardsData);
+    const statsContent = document.getElementById('statsContent');
+    document.body.style.overflow = "hidden";
+
+    statsContent.innerHTML = `
+        <p><b>Total number of cards:</b> ${stats.totalCards}</p>
+        <p><b>Earliest release date:</b> ${stats.earliestDate}</p>
+        <p><b>Latest release date:</b> ${stats.latestDate}</p>
+        <p><b>Most expensive card price:</b> $${stats.mostExpensive}</p>
+        <p><b>Cheapest card price:</b> $${stats.cheapest}</p>
+    `;
+
+    document.getElementById('statsModal').style.display = 'block';
+
+    updateChart('setChart', 'Number of cards by set', stats.setCounts);
+    updateChart('rarityChart', 'Number of cards by rarity', stats.rarityCounts);
+    updateChart('detailChart', 'Number of cards by detail', stats.detailCounts);
+    updateChart('illustratorChart', 'Top 5 illustrators', Object.fromEntries(stats.topIllustrators.map(({ name, count }) => [name, count])));
+    updateChart('supertypeChart', 'Number of cards by supertype', stats.supertypeCounts);
+    updateChart('foilChart', 'Number of cards by foil', stats.foilCounts);
+}
+
+function calculateStats(cards) {
+    const setCounts = {};
+    const rarityCounts = {};
+    const detailCounts = {};
+    const illustratorCounts = {};
+    const supertypeCounts = {};
+    const foilCounts = {};
+    let earliestDate = null;
+    let latestDate = null;
+    let mostExpensive = -Infinity;
+    let cheapest = Infinity;
+    let totalCards = 0;
+
+    cards.forEach(card => {
+        totalCards += parseInt(card.count);
+
+        // Count Sets
+        if (card.set.name) {
+            setCounts[card.set.name] = (setCounts[card.set.name] || 0) + parseInt(card.count);
+        }
+
+        // Count rarities
+        if (card.rarity) {
+            rarityCounts[card.rarity] = (rarityCounts[card.rarity] || 0) + parseInt(card.count);
+        }
+
+        // Count Details
+        if (card.detail) {
+            detailCounts[card.detail] = (detailCounts[card.detail] || 0) + parseInt(card.count);
+        }
+
+        // Count illustrators
+        if (card.artist) {
+            illustratorCounts[card.artist] = (illustratorCounts[card.artist] || 0) + parseInt(card.count);
+        }
+
+        // Count supertypes
+        if (card.supertype) {
+            supertypeCounts[card.supertype] = (supertypeCounts[card.supertype] || 0) + parseInt(card.count);
+        }
+        
+        //Count Foils
+        if (card.holo) {
+            foilCounts[card.holo] = (foilCounts[card.holo] || 0) + parseInt(card.count);
+        }
+
+        // Find earliest and latest release dates
+        const releaseDate = new Date(card.set.releaseDate);
+        if (!earliestDate || releaseDate < earliestDate) earliestDate = releaseDate;
+        if (!latestDate || releaseDate > latestDate) latestDate = releaseDate;
+
+        // Track highest price by date
+        const price = getPrice(card);
+        if (price !== undefined) {
+            if (price > mostExpensive) mostExpensive = price;
+            if (price < cheapest) cheapest = price;
+        }
+    });
+
+    const topIllustrators = Object.entries(illustratorCounts)
+        .filter(([, count]) => count > 2)
+        .sort(([, a], [, b]) => b - a)
+        .slice(0, 5)
+        .map(([name, count]) => ({ name, count }));
+
+    return {
+        totalCards,
+        setCounts: sortObjectByValues(setCounts),
+        rarityCounts: sortObjectByValues(rarityCounts),
+        detailCounts: sortObjectByValues(detailCounts),
+        illustratorCounts: sortObjectByValues(illustratorCounts),
+        supertypeCounts: sortObjectByValues(supertypeCounts),
+        foilCounts: sortObjectByValues(foilCounts),    
+        topIllustrators,
+        earliestDate: earliestDate ? earliestDate.toISOString().split('T')[0] : 'N/A',
+        latestDate: latestDate ? latestDate.toISOString().split('T')[0] : 'N/A',
+        mostExpensive: mostExpensive === -Infinity ? 'N/A' : mostExpensive.toFixed(2),
+        cheapest: cheapest === Infinity ? 'N/A' : cheapest.toFixed(2),
+    };
+}
+
+function sortObjectByValues(obj) {
+    return Object.fromEntries(Object.entries(obj).sort(([, a], [, b]) => b - a));
+}
+
+function updateChart(canvasId, title, data, type = 'bar') {
+    if (charts[canvasId]) {
+        charts[canvasId].destroy(); // Destroy existing chart instance
+    }
+
+    const ctx = document.getElementById(canvasId).getContext('2d');
+    charts[canvasId] = new Chart(ctx, {
+        type: type,
+        data: {
+            labels: Object.keys(data),
+            datasets: [{
+                label: title,
+                data: Object.values(data),
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false, // Allow custom sizing
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+function closeStats() {
+    document.getElementById('statsModal').style.display = 'none';
+}
 
 // Rarity Order for sorting
 const rarityOrder = {
