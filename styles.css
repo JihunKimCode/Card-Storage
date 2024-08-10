@@ -374,7 +374,13 @@ footer a:hover{
     color: var(--dark-gray);
 }
 
-@media only screen and (max-width: 600px) {
+@media (min-width: 620px) and (max-width: 850px) {
+    #controls {
+        justify-content: flex-end;
+    }    
+}
+
+@media only screen and (max-width: 620px) {
     .header {
         flex-direction: column;
         align-items: flex-start;
@@ -405,10 +411,8 @@ footer a:hover{
 
     #controls {
         flex-direction: column;
-        align-items: flex-end;
         margin: 10px;
         margin-left: 15px;
-        /* width: 100%; */
     }
     
     #rarity-filter, #set-filter, #type-filter, #artist-filter, #holo-filter, #count-filter, #sort-by, #order-toggle, #visibleButton, #statsButton{

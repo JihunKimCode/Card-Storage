@@ -7,7 +7,8 @@ A simple webpage for those who want to see their cards digitally.
 - Use this [CSV template](https://github.com/JihunKimCode/Card-Storage/blob/main/pokemon_cards.csv)
 
 ## Features
-- Filter by Set, Rarity, Artist Name, Details, Holofoil, and Count
+- Filter by Set, Rarity, Artist Name
+  - Users can add three more filters
 - Sorting
   - By Alphabetically, by Artist Name, by Release Date, by Rarity, and by Price
 ### Toggle Card Information

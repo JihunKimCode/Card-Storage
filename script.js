@@ -1,3 +1,4 @@
+// Components
 const cardContainer = document.getElementById('card-container');
 const cardPopup = document.getElementById('card-popup');
 const popupContent = document.getElementById('popup-content');
@@ -5,6 +6,15 @@ const scrollTopButton = document.getElementById('scroll-top');
 const loadingBar = document.getElementById('loading-bar');
 const loadingContext = document.getElementById('loading-context');
 
+// Filters
+const rarityFilter = document.getElementById('rarity-filter');
+const setFilter = document.getElementById('set-filter');
+const artistFilter = document.getElementById('artist-filter');
+const typeFilter = document.getElementById('type-filter');
+const holoFilter = document.getElementById('holo-filter');
+const countFilter = document.getElementById('count-filter');
+
+// URLs
 const csvUrl = 'https://raw.githubusercontent.com/JihunKimCode/Card-Storage/main/pokemon_cards.csv';
 const apiUrl = 'https://api.pokemontcg.io/v2/';
 
@@ -50,6 +60,9 @@ async function fetchCSVData(file) {
         
         // Check if the header has all the required columns
         const header = lines[0].split(',').map(column => column.trim()); // Trim whitespace
+        typeFilter.innerHTML += `<option value="">🔍${header[4]||''}</option>`;
+        holoFilter.innerHTML += `<option value="">🔍${header[5]||''}</option>`;
+        countFilter.innerHTML += `<option value="">🔍${header[6]||''}</option>`;
         const requiredColumns = ['Name', 'Sets', 'Rarity', 'Artist']; // Adjust column names
         const missingColumns = requiredColumns.filter(column => !header.includes(column));
 
@@ -59,8 +72,8 @@ async function fetchCSVData(file) {
 
         // Proceed with data processing
         return lines.slice(1).map(line => {
-            const [name, set, rarity, artist, category, type, holo, count] = line.split(',').map(item => item.trim()); // Trim whitespace
-            return { name, set, rarity, artist, category, type, holo, count };
+            const [name, set, rarity, artist, type, holo, count] = line.split(',').map(item => item.trim()); // Trim whitespace
+            return { name, set, rarity, artist, type, holo, count };
         });
     } catch (error) {
         alert('Error fetching CSV data: ' + error.message);
@@ -346,13 +359,6 @@ function enableFilters() {
 }
 
 function populateFilters() {
-    const rarityFilter = document.getElementById('rarity-filter');
-    const setFilter = document.getElementById('set-filter');
-    const typeFilter = document.getElementById('type-filter');
-    const artistFilter = document.getElementById('artist-filter');
-    const holoFilter = document.getElementById('holo-filter');
-    const countFilter = document.getElementById('count-filter');
-
     // Sort rarity
     const rarities = [...new Set(csvData.map(card => card.rarity).filter(rarity => rarity && rarity !== "N/A"))]
     .sort((a, b) => {
