@@ -59,8 +59,8 @@ async function fetchCSVData(file) {
 
         // Proceed with data processing
         return lines.slice(1).map(line => {
-            const [name, set, rarity, artist, category, detail, holo, count] = line.split(',').map(item => item.trim()); // Trim whitespace
-            return { name, set, rarity, artist, category, detail, holo, count };
+            const [name, set, rarity, artist, category, type, holo, count] = line.split(',').map(item => item.trim()); // Trim whitespace
+            return { name, set, rarity, artist, category, type, holo, count };
         });
     } catch (error) {
         alert('Error fetching CSV data: ' + error.message);
@@ -213,7 +213,7 @@ async function fetchAllSets() {
 
 async function createDisplayCardsData() {
     displayCardsData = []; // Clear previous data
-    for (const { name, set, rarity, artist, category, detail, holo, count } of filteredCards) {
+    for (const { name, set, rarity, artist, category, type, holo, count } of filteredCards) {
         if (!name) {
             console.error('Card name is blank or undefined');
             continue; // Skip this card
@@ -227,7 +227,7 @@ async function createDisplayCardsData() {
             // Store additional information
             const releaseDate = card.set.releaseDate || '';
             const price = getPrice(card) || 0;
-            displayCardsData.push({ ...card, releaseDate, price, detail, holo, count });
+            displayCardsData.push({ ...card, releaseDate, price, type, holo, count });
         } else {
             console.error(`Card not found: ${name}`);
         }
@@ -327,7 +327,7 @@ window.onscroll = function () {
 function disableFilters() {
     document.getElementById('rarity-filter').disabled = true;
     document.getElementById('set-filter').disabled = true;
-    document.getElementById('detail-filter').disabled = true;
+    document.getElementById('type-filter').disabled = true;
     document.getElementById('artist-filter').disabled = true;
     document.getElementById('holo-filter').disabled = true;
     document.getElementById('sort-by').disabled = true;
@@ -338,7 +338,7 @@ function disableFilters() {
 function enableFilters() {
     document.getElementById('rarity-filter').disabled = false;
     document.getElementById('set-filter').disabled = false;
-    document.getElementById('detail-filter').disabled = false;
+    document.getElementById('type-filter').disabled = false;
     document.getElementById('artist-filter').disabled = false;
     document.getElementById('holo-filter').disabled = false;
     document.getElementById('sort-by').disabled = false;
@@ -348,7 +348,7 @@ function enableFilters() {
 function populateFilters() {
     const rarityFilter = document.getElementById('rarity-filter');
     const setFilter = document.getElementById('set-filter');
-    const detailFilter = document.getElementById('detail-filter');
+    const typeFilter = document.getElementById('type-filter');
     const artistFilter = document.getElementById('artist-filter');
     const holoFilter = document.getElementById('holo-filter');
     const countFilter = document.getElementById('count-filter');
@@ -364,7 +364,7 @@ function populateFilters() {
 
     // Sort them alphabetically
     const sets = [...new Set(csvData.map(card => card.set).filter(set => set && set !== "N/A"))].sort();
-    const details = [...new Set(csvData.map(card => card.detail).filter(detail => detail && detail !== "N/A"))].sort();
+    const types = [...new Set(csvData.map(card => card.type).filter(type => type && type !== "N/A"))].sort();
     const artists = [...new Set(csvData.map(card => card.artist).filter(artist => artist && artist !== "N/A"))].sort();
     const holos = [...new Set(csvData.map(card => card.holo).filter(holo => holo && holo !== "N/A"))].sort();
 
@@ -384,12 +384,12 @@ function populateFilters() {
         setFilter.appendChild(option);
     });
 
-    // Populate detail filter
-    details.forEach(detail => {
+    // Populate type filter
+    types.forEach(type => {
         const option = document.createElement('option');
-        option.value = detail;
-        option.textContent = detail;
-        detailFilter.appendChild(option);
+        option.value = type;
+        option.textContent = type;
+        typeFilter.appendChild(option);
     });
 
     // Populate artist filter
@@ -420,7 +420,7 @@ function populateFilters() {
 
 document.getElementById('rarity-filter').addEventListener('change', applyFilters);
 document.getElementById('set-filter').addEventListener('change', applyFilters);
-document.getElementById('detail-filter').addEventListener('change', applyFilters);
+document.getElementById('type-filter').addEventListener('change', applyFilters);
 document.getElementById('artist-filter').addEventListener('change', applyFilters);
 document.getElementById('holo-filter').addEventListener('change', applyFilters);
 document.getElementById('count-filter').addEventListener('change', applyFilters);
@@ -434,7 +434,7 @@ async function applyFilters() {
     disableFilters(); // Disable filters while applying
     const rarityFilter = document.getElementById('rarity-filter').value;
     const setFilter = document.getElementById('set-filter').value;
-    const detailFilter = document.getElementById('detail-filter').value;
+    const typeFilter = document.getElementById('type-filter').value;
     const artistFilter = document.getElementById('artist-filter').value;
     const holoFilter = document.getElementById('holo-filter').value;
     const countFilter = document.getElementById('count-filter').value;
@@ -442,14 +442,14 @@ async function applyFilters() {
     filteredCards = csvData.filter(card => {
         return (!rarityFilter || card.rarity === rarityFilter) &&
                (!setFilter || card.set === setFilter) &&
-               (!detailFilter || card.detail === detailFilter) &&
+               (!typeFilter || card.type === typeFilter) &&
                (!artistFilter || card.artist === artistFilter) &&
                (!holoFilter || card.holo === holoFilter) &&
                (!countFilter || card.count == countFilter);
     });
 
     // Filter displayCardsData directly without fetching new data
-    displayCardsData = filteredCards.map(({ name, set, rarity, artist, detail, holo, count }) => {
+    displayCardsData = filteredCards.map(({ name, set, rarity, artist, type, holo, count }) => {
         if (!name) {
             console.error('Card name is blank or undefined');
             return null;
@@ -461,7 +461,7 @@ async function applyFilters() {
         if (card) {
             const releaseDate = card.set.releaseDate || '';
             const price = getPrice(card) || 0;
-            return { ...card, releaseDate, price, detail, holo, count };
+            return { ...card, releaseDate, price, type, holo, count };
         } else {
             console.error(`Card not found: ${name}`);
             return null;
@@ -585,7 +585,7 @@ function showStats() {
 
     updateChart('setChart', 'Number of cards by set', stats.setCounts);
     updateChart('rarityChart', 'Number of cards by rarity', stats.rarityCounts);
-    updateChart('detailChart', 'Number of cards by detail', stats.detailCounts);
+    updateChart('typeChart', 'Number of cards by type', stats.typeCounts);
     updateChart('supertypeChart', 'Number of cards by supertype', stats.supertypeCounts);
     updateChart('foilChart', 'Number of cards by foil', stats.foilCounts);
     updateChart('illustratorChart', 'Top 10 illustrators', Object.fromEntries(stats.topIllustrators.map(({ name, count }) => [name, count])));
@@ -594,7 +594,7 @@ function showStats() {
 function calculateStats(cards) {
     const setCounts = {};
     const rarityCounts = {};
-    const detailCounts = {};
+    const typeCounts = {};
     const illustratorCounts = {};
     const supertypeCounts = {};
     const foilCounts = {};
@@ -617,9 +617,9 @@ function calculateStats(cards) {
             rarityCounts[card.rarity] = (rarityCounts[card.rarity] || 0) + parseInt(card.count);
         }
 
-        // Count Details
-        if (card.detail) {
-            detailCounts[card.detail] = (detailCounts[card.detail] || 0) + parseInt(card.count);
+        // Count types
+        if (card.type) {
+            typeCounts[card.type] = (typeCounts[card.type] || 0) + parseInt(card.count);
         }
 
         // Count illustrators
@@ -659,7 +659,7 @@ function calculateStats(cards) {
         totalCards,
         setCounts: sortObjectByValues(setCounts),
         rarityCounts: sortObjectByValues(rarityCounts),
-        detailCounts: sortObjectByValues(detailCounts),
+        typeCounts: sortObjectByValues(typeCounts),
         illustratorCounts: sortObjectByValues(illustratorCounts),
         supertypeCounts: sortObjectByValues(supertypeCounts),
         foilCounts: sortObjectByValues(foilCounts),    

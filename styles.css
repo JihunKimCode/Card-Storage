@@ -204,7 +204,7 @@ h1 a{
     color: var(--gray);
 }
 
-#rarity-filter, #set-filter, #detail-filter, #artist-filter, #holo-filter, #count-filter, #sort-by, #order-toggle, #visibleButton, #statsButton{
+#rarity-filter, #set-filter, #type-filter, #artist-filter, #holo-filter, #count-filter, #sort-by, #order-toggle, #visibleButton, #statsButton{
     padding: 7px;    
     background: var(--white);
     color: var(--black);
@@ -224,15 +224,15 @@ h1 a{
     transition: height .4s ease;
 }
 
-#rarity-filter, #set-filter, #detail-filter, #artist-filter, #holo-filter, #count-filter{
-    width: 100px;
+#rarity-filter, #set-filter, #type-filter, #artist-filter, #holo-filter, #count-filter{
+    width: 90px;
 }
 
 #order-toggle, #visibleButton, #statsButton{
     width: 36px;
 }
 
-#rarity-filter option, #set-filter option, #detail-filter option,  #artist-filter option, #holo-filter option, #count-filter option, #sort-by option{
+#rarity-filter option, #set-filter option, #type-filter option,  #artist-filter option, #holo-filter option, #count-filter option, #sort-by option{
     font-size: 12px;
 }
 
@@ -411,7 +411,7 @@ footer a:hover{
         /* width: 100%; */
     }
     
-    #rarity-filter, #set-filter, #detail-filter, #artist-filter, #holo-filter, #count-filter, #sort-by, #order-toggle, #visibleButton, #statsButton{
+    #rarity-filter, #set-filter, #type-filter, #artist-filter, #holo-filter, #count-filter, #sort-by, #order-toggle, #visibleButton, #statsButton{
         width: 100%;
     }
 
