@@ -11,8 +11,8 @@ A simple webpage for those who want to see their cards digitally.
 - Sorting
   - By Alphabetically, by Artist Name, by Release Date, by Rarity, and by Price
 ### Toggle Card Information
-![cards-notext](https://github.com/user-attachments/assets/e48009d7-bd1d-4230-93cd-4c7b55b3ad6b)
+![cards_toggle](https://github.com/user-attachments/assets/9b850611-1424-421b-8bdb-b3dab25c35e8)
 ### Show Stats of Cards
-![cards-stats](https://github.com/user-attachments/assets/f59c7be2-6cb2-4313-b7ae-a811e0974d46)
+![cards_stats](https://github.com/user-attachments/assets/1597b16c-87e4-4e31-aa5b-a0e5b984876c)
 ### Dark Mode
-![cards-darkmode](https://github.com/user-attachments/assets/e16a3186-5783-4d3e-91f8-e781c095c973)
+![cards_darkmode](https://github.com/user-attachments/assets/781b17ac-d9a6-4508-98a6-1054a0fd9e52)
