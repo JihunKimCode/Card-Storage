@@ -23,6 +23,7 @@ let csvData = [];
 let filteredCards = [];
 let displayCardsData = [];
 let sortOrder = 1;
+let header;
 
 // Year in Footer
 const currentYear = new Date().getFullYear();
@@ -59,10 +60,9 @@ async function fetchCSVData(file) {
         const lines = data.split('\n').filter(line => line.trim()); // Filter out empty lines
         
         // Check if the header has all the required columns
-        const header = lines[0].split(',').map(column => column.trim()); // Trim whitespace
+        header = lines[0].split(',').map(column => column.trim()); // Trim whitespace
         typeFilter.innerHTML += `<option value="">🔍${header[4]||''}</option>`;
         holoFilter.innerHTML += `<option value="">🔍${header[5]||''}</option>`;
-        countFilter.innerHTML += `<option value="">🔍${header[6]||''}</option>`;
         const requiredColumns = ['Name', 'Sets', 'Rarity', 'Artist']; // Adjust column names
         const missingColumns = requiredColumns.filter(column => !header.includes(column));
 
@@ -591,9 +591,18 @@ function showStats() {
 
     updateChart('setChart', 'Number of cards by set', stats.setCounts);
     updateChart('rarityChart', 'Number of cards by rarity', stats.rarityCounts);
-    updateChart('typeChart', 'Number of cards by type', stats.typeCounts);
     updateChart('supertypeChart', 'Number of cards by supertype', stats.supertypeCounts);
-    updateChart('foilChart', 'Number of cards by foil', stats.foilCounts);
+    if (header[4]) {
+        updateChart('typeChart', `Number of cards by ${header[4].toLowerCase()}`, stats.typeCounts);
+    } else {
+        removeChart('typeChart');
+    }
+    
+    if (header[5]) {
+        updateChart('foilChart', `Number of cards by ${header[5].toLowerCase()}`, stats.foilCounts);
+    } else {
+        removeChart('foilChart');
+    }
     updateChart('illustratorChart', 'Top 10 illustrators', Object.fromEntries(stats.topIllustrators.map(({ name, count }) => [name, count])));
 }
 
@@ -707,6 +716,13 @@ function updateChart(canvasId, title, data, type = 'bar') {
             }
         }
     });
+}
+
+function removeChart(chartId) {
+    const chartContainer = document.getElementById(chartId).parentElement;
+    chartContainer.style.display = 'none';
+    const ctx = document.getElementById(chartId).getContext('2d');
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 }
 
 // Rarity Order for sorting
