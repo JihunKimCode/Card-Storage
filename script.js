@@ -538,9 +538,17 @@ orderToggleBtn.addEventListener('click', () => {
 
 sortBySelect.addEventListener('change', updateIcon);
 
-document.getElementById('visibleButton').addEventListener('click', function() {
+document.getElementById('visibleButton').addEventListener('click', toggleVisibility);
+
+document.addEventListener('keydown', function(event) {
+    if (event.altKey && event.key === '`') {
+        toggleVisibility();
+    }
+});
+
+function toggleVisibility() {
     const cardInfos = document.querySelectorAll('.cardInfo');
-    const icon = this.querySelector('i');
+    const icon = document.getElementById('visibleButton').querySelector('i');
     const isVisible = icon.classList.contains('fa-eye');
 
     cardInfos.forEach(cardInfo => {
@@ -554,7 +562,7 @@ document.getElementById('visibleButton').addEventListener('click', function() {
         icon.classList.remove('fa-eye-slash');
         icon.classList.add('fa-eye');
     }
-});
+}
 
 // Stats Button Event Listener
 document.getElementById('statsButton').addEventListener('click', showStats);
