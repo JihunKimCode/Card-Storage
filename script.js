@@ -22,6 +22,7 @@ let cardsData = [];
 let csvData = [];
 let filteredCards = [];
 let displayCardsData = [];
+let cachedCardsData = [];
 let sortOrder = 1;
 let header;
 
@@ -233,9 +234,8 @@ async function createDisplayCardsData() {
         }
 
         let card = cardsData.find(c => c.name === name && c.set.name === set && c.rarity === rarity && c.artist === artist);
-        if (!card) {
-            card = await fetchCardData(name, set, rarity, artist);
-        }
+        if(!card) card = cardsData.find(c => c.name === name && c.set.name === set && c.rarity === rarity);
+        if (!card) card = await fetchCardData(name, set, rarity, artist);
         if (card) {
             // Store additional information
             const releaseDate = card.set.releaseDate || '';
@@ -245,6 +245,7 @@ async function createDisplayCardsData() {
             console.error(`Card not found: ${name}`);
         }
     }
+    if (!cachedCardsData || cachedCardsData.length === 0) cachedCardsData = displayCardsData;
 }
 
 // Fill the card container
@@ -460,10 +461,12 @@ async function applyFilters() {
             console.error('Card name is blank or undefined');
             return null;
         }
-        let card = cardsData.find(c => c.name === name && c.set.name === set && c.rarity === rarity && c.artist === artist);
-        if (!card) card = cardsData.find(c => c.name === name && c.rarity === rarity && c.artist === artist);
-        if (!card) card = cardsData.find(c => c.name === name && c.artist === artist);
-        if (!card) card = cardsData.find(c => c.name === name);
+        let card = cachedCardsData.find(c => c.name === name && c.set.name === set && c.rarity === rarity && c.artist === artist);
+        if (!card) card = cachedCardsData.find(c => c.name === name && c.set.name === set && c.rarity === rarity);
+        if (!card) card = cachedCardsData.find(c => c.name === name && c.rarity === rarity && c.artist === artist);
+        if (!card) card = cachedCardsData.find(c => c.name === name && c.rarity === rarity);
+        if (!card) card = cachedCardsData.find(c => c.name === name && c.artist === artist);
+        if (!card) card = cachedCardsData.find(c => c.name === name);
         if (card) {
             const releaseDate = card.set.releaseDate || '';
             const price = getPrice(card) || 0;
