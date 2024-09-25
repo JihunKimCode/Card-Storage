@@ -742,8 +742,8 @@ const rarityOrder = {
     "Uncommon": 20,
     "Rare": 30,                         // Regular
     "Classic Collection": 31,
-    "Double Rare": 40,                  // EX
-    "Rare Holo": 50,                    // Holofoil
+    "Rare Holo": 40,                    // Holofoil
+    "Double Rare": 50,                  // EX
     "Ultra Rare": 60,                   // Unique card classification
     "Rare Ultra": 60,                   // Unique card classification
     "Rare Holo Star": 61,

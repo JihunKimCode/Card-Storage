@@ -7,6 +7,7 @@ Lapras V,Sword & Shield,Rare Holo V,Hasuno,Full-Art,Holo,1
 Lapras VMAX,Sword & Shield,Rare Holo VMAX,5ban Graphics,Full-Art,Holo,1
 Meditite,Stellar Crown,Illustration Rare,Yuriko Akase,Full-Art,Holo,1
 Passimian,Silver Tempest,Trainer Gallery Rare Holo,nagimiso,Full-Art,Holo,1
+Raboot,Stellar Crown,Illustration Rare,rika,Full-Art,Holo,1
 Reshiram V,Silver Tempest,Rare Holo V,N-DESIGN Inc.,Full-Art,Holo,1
 Serperior V,Silver Tempest,Rare Holo V,Ayaka Yoshida,Full-Art,Holo,1
 Umbreon VMAX,Start Deck 100,N/A,AKIRA EGAWA,Full-Art,Non-Holo,1
@@ -40,6 +41,7 @@ Spinda,Silver Tempest,Common,Souichirou Gunjima,Colorless,Non-Holo,1
 Spinda,Paradox Rift,Common,Masakazu Fukuda,Colorless,Non-Holo,1
 Stantler,Astral Radiance,Common,Teeziro,Colorless,Non-Holo,1
 Stoutland,Evolving Skies,Rare,Naoki Saito,Colorless,Non-Holo,1
+Talonflame,Stellar Crown,Uncommon,Nurikabe,Colorless,Non-Holo,1
 Archaludon,Stellar Crown,Rare,Oswaldo KATO,Metal,Holo,1
 Copperajah,Fusion Strike,Uncommon,KEIICHIRO ITO,Metal,Reverse,1
 Beldum,Temporal Forces,Common,hatachu,Metal,Non-Holo,1
@@ -86,6 +88,7 @@ Barbaracle,Lost Origin,Rare Holo,KEIICHIRO ITO,Fighting,Holo,1
 Medicham ex,Stellar Crown,Double Rare,PLANETA Yamashita,Fighting,Holo,1
 Steelix,Fusion Strike,Rare Holo,Ryuta Fuse,Fighting,Holo,1
 Boldore,Evolving Skies,Uncommon,otumami,Fighting,Reverse,1
+Crabrawler,Stellar Crown,Common,Scav,Fighting,Reverse,1
 Lucario,Brilliant Stars,Rare Holo,GIDORA,Fighting,Reverse,1
 Mankey,Paldea Evolved,Common,kurumitsu,Fighting,Reverse,1
 Marowak,Stellar Crown,Uncommon,cochi8i,Fighting,Reverse,1
@@ -125,6 +128,7 @@ Onix,Fusion Strike,Common,KEIICHIRO ITO,Fighting,Non-Holo,2
 Passimian,Chilling Reign,Rare,Akira Komayama,Fighting,Non-Holo,1
 Phanpy,Silver Tempest,Common,Naoyo Kimura,Fighting,Non-Holo,1
 Regirock,Astral Radiance,Rare,Souichirou Gunjima,Fighting,Non-Holo,1
+Rhydon,Stellar Crown,Common,Ryuta Fuse,Fighting,Non-Holo,1
 Rhyhorn,Stellar Crown,Common,kodama,Fighting,Non-Holo,1
 Riolu,Stellar Crown,Common,Souichirou Gunjima,Fighting,Non-Holo,2
 Rockruff,Paldea Evolved,Common,0313,Fighting,Non-Holo,1
@@ -200,7 +204,7 @@ Grubbin,Fusion Strike,Common,Asako Ito,Grass,Non-Holo,1
 Heracross,Chilling Reign,Common,Hasuno,Grass,Non-Holo,1
 Heracross,Paldea Evolved,Uncommon,GOSSAN,Grass,Non-Holo,2
 Kricketot,Astral Radiance,Common,Masakazu Fukuda,Grass,Non-Holo,1
-Lileep,Stellar Crown,Common,Ounishi,Grass,Non-Holo,2
+Lileep,Stellar Crown,Common,Ounishi,Grass,Non-Holo,1
 Lilligant,BREAKpoint,Rare,Shin Nagasawa,Grass,Non-Holo,1
 Lilligant,Evolving Skies,Rare,Kagemaru Himeno,Grass,Non-Holo,1
 Masquerain,Paradox Rift,Uncommon,kantaro,Grass,Non-Holo,1
@@ -279,6 +283,7 @@ Espurr,Silver Tempest,Common,Asako Ito,Psychic,Non-Holo,1
 Galarian Corsola,Fusion Strike,Common,Kouki Saitou,Psychic,Non-Holo,1
 Girafarig,Temporal Forces,Common,matazo,Psychic,Non-Holo,1
 Gothita,Paldea Evolved,Common,0313,Psychic,Non-Holo,1
+Greavard,Stellar Crown,Common,Miki Tanaka,Psychic,Non-Holo,1
 Hatenna,Chilling Reign,Common,Sekio,Psychic,Non-Holo,1
 Hattrem,Chilling Reign,Uncommon,miki kudo,Psychic,Non-Holo,1
 Hisuian Zorua,Lost Origin,Common,Akira Komayama,Psychic,Non-Holo,1
@@ -310,14 +315,16 @@ Paldean Wooper,Paldea Evolved,Common,Saya Tsuruta,Darkness,Reverse,1
 Shroodle,Paldea Evolved,Common,Akira Komayama,Darkness,Reverse,1
 Bombirdier,Stellar Crown,Common,Aya Kusube,Darkness,Non-Holo,1
 Galarian Zigzagoon,Fusion Strike,Common,Eri Yamaki,Darkness,Non-Holo,1
+Gulpin,Stellar Crown,Common,Shimaris Yukichi,Darkness,Non-Holo,1
 Honchkrow,Silver Tempest,Uncommon,aoki,Darkness,Non-Holo,1
 Mareanie,Silver Tempest,Common,Yuu Nishida,Darkness,Non-Holo,1
+Morgrem,Stellar Crown,Common,Mékayu,Darkness,Non-Holo,1
 Morpeko,Silver Tempest,Uncommon,nagimiso,Darkness,Non-Holo,1
 Murkrow,Lost Origin,Common,Yuka Morii,Darkness,Non-Holo,1
 Murkrow,Paldea Evolved,Common,Teeziro,Darkness,Non-Holo,1
 Murkrow,Silver Tempest,Common,Ligton,Darkness,Non-Holo,1
 Paldean Wooper,Paldea Evolved,Common,Kouki Saitou,Darkness,Non-Holo,1
-Pangoro,Stellar Crown,Uncommon,KEIICHIRO ITO,Darkness,Non-Holo,1
+Pangoro,Stellar Crown,Uncommon,KEIICHIRO ITO,Darkness,Non-Holo,2
 Pawniard,Scarlet & Violet,Common,sowsow,Darkness,Non-Holo,1
 Sandile,Silver Tempest,Common,0313,Darkness,Non-Holo,1
 Seviper,Lost Origin,Uncommon,Tomokazu Komiya,Darkness,Non-Holo,1
@@ -332,6 +339,7 @@ Bianca's Devotion,Temporal Forces,Uncommon,En Morikura,Supporter,Non-Holo,1
 Candice,Silver Tempest,Uncommon,Ken Sugimori,Supporter,Non-Holo,1
 Chili & Cilan & Cress,Fusion Strike,Uncommon,Yusuke Ohmura,Supporter,Non-Holo,1
 Ciphermaniac's Codebreaking,Temporal Forces,Uncommon,Taira Akitsu,Supporter,Non-Holo,1
+Crispin,Stellar Crown,Uncommon,GIDORA,Supporter,Non-Holo,1
 Dancer,Fusion Strike,Uncommon,Sanosuke Sakuma,Supporter,Non-Holo,1
 Eri,Temporal Forces,Uncommon,GOSSAN,Supporter,Non-Holo,1
 Friends in Galar,Brilliant Stars,Uncommon,Yuu Nishida,Supporter,Non-Holo,1
@@ -342,7 +350,7 @@ Schoolboy,Fusion Strike,Uncommon,kirisAki,Supporter,Non-Holo,1
 Serena,Silver Tempest,Uncommon,Ken Sugimori,Supporter,Non-Holo,1
 Shauna,Fusion Strike,Uncommon,Yuu Nishida,Supporter,Non-Holo,1
 Shopping Center,Evolving Skies,Uncommon,Oswaldo KATO,Stadium,Reverse,1
-Area Zero Underdepths,Stellar Crown,Uncommon,MARINA Chikazawa,Stadium,Non-Holo,1
+Area Zero Underdepths,Stellar Crown,Uncommon,MARINA Chikazawa,Stadium,Non-Holo,2
 Calamitous Snowy Mountain,Paldea Evolved,Uncommon,AYUMI ODASHIMA,Stadium,Non-Holo,1
 Full Metal Lab,Temporal Forces,Uncommon,AYUMI ODASHIMA,Stadium,Non-Holo,1
 Lake Acuity,Lost Origin,Uncommon,Oswaldo KATO,Stadium,Non-Holo,1
@@ -361,3 +369,7 @@ Windup Arm,Lost Origin,Uncommon,Toyste Beach,Item,Non-Holo,1
 Jet Energy,Paldea Evolved,Uncommon,undefined,Energy,Reverse,1
 Regenerative Energy,Silver Tempest,Uncommon,undefined,Energy,Reverse,1
 V Guard Energy,Silver Tempest,Uncommon,undefined,Energy,Non-Holo,1
+Klawf,McDonald's collection 2023,Rare,nagimiso,Fighting,Holo,1
+Cetoddle,McDonald's collection 2023,Common,Kouki Saitou,Water,Non-Holo,1
+Kilowattrel,McDonald's collection 2023,Uncommon,Kouki Saitou,Lightning,Non-Holo,1
+Tandemaus,McDonald's collection 2023,Common,yuu,Colorless,Non-Holo,1
