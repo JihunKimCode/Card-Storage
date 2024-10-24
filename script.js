@@ -587,7 +587,6 @@ let charts = {}; // Keep track of chart instances
 
 function showStats() {
     const stats = calculateStats(displayCardsData);
-    console.log("Sorted setCounts:", stats.setCounts);  // Add this to verify sorting
 
     const statsContent = document.getElementById('statsContent');
     document.body.style.overflow = "hidden";
