@@ -233,7 +233,7 @@ async function createDisplayCardsData() {
             continue; // Skip this card
         }
 
-        let card = cardsData.find(c => c.name === name && c.set.name === set && c.rarity === rarity && c.artist === artist);
+        let card = cardsData.find(c => c.name === name && (c.set.name === set||c.set.name.includes(set)) && c.rarity === rarity && c.artist === artist);
         if(!card) card = cardsData.find(c => c.name === name && c.set.name === set && c.rarity === rarity);
         if (!card) card = await fetchCardData(name, set, rarity, artist);
         if (card) {
@@ -587,6 +587,8 @@ let charts = {}; // Keep track of chart instances
 
 function showStats() {
     const stats = calculateStats(displayCardsData);
+    console.log("Sorted setCounts:", stats.setCounts);  // Add this to verify sorting
+
     const statsContent = document.getElementById('statsContent');
     document.body.style.overflow = "hidden";
 

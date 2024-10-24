@@ -1,11 +1,14 @@
 ﻿Name,Sets,Rarity,Artist,Type,Foil,Count
 Altaria,Silver Tempest,Trainer Gallery Rare Holo,Yuu Nishida,Full-Art,Holo,1
+Bibarel,Crown Zenith,Trainer Gallery Rare Holo,Amelicart,Full-Art,Holo,1
 Blaziken V,Chilling Reign,Rare Holo V,Ayaka Yoshida,Full-Art,Holo,1
 Chien-Pao ex,Paldea Evolved,Hyper Rare,aky CG Works,Full-Art,Holo,1
 Deerling,Temporal Forces,Illustration Rare,Susumu Maeya,Full-Art,Holo,1
+Duraludon VMAX,Crown Zenith,Rare Holo VMAX,PLANETA Mochizuki,Full-Art,Holo,1
 Galvantula ex,Stellar Crown,Ultra Rare,5ban Graphics,Full-Art,Holo,1
 Lapras V,Sword & Shield,Rare Holo V,Hasuno,Full-Art,Holo,1
 Lapras VMAX,Sword & Shield,Rare Holo VMAX,5ban Graphics,Full-Art,Holo,1
+Leafeon VSTAR,Crown Zenith,Rare Holo VSTAR,Jiro Sasumo,Full-Art,Holo,1
 Meditite,Stellar Crown,Illustration Rare,Yuriko Akase,Full-Art,Holo,1
 Passimian,Silver Tempest,Trainer Gallery Rare Holo,nagimiso,Full-Art,Holo,1
 Raboot,Stellar Crown,Illustration Rare,rika,Full-Art,Holo,1
@@ -53,6 +56,7 @@ Doublade,Paradox Rift,Common,Bun Toujo,Metal,Non-Holo,1
 Durant,Fusion Strike,Common,Shin Nagasawa,Metal,Non-Holo,1
 Excadrill,Fusion Strike,Uncommon,Lee HyunJung,Metal,Non-Holo,1
 Ferroseed,Silver Tempest,Common,ryoma uratsuka,Metal,Non-Holo,1
+Galarian Meowth,Crown Zenith,Common,miki kudo,Metal,Non-Holo,1
 Galarian Stunfisk,Lost Origin,Uncommon,Shigenori Negishi,Metal,Non-Holo,1
 Jirachi,Stellar Crown,Uncommon,Kuroimori,Metal,Non-Holo,1
 Klefki,Fusion Strike,Common,MAHOU,Metal,Non-Holo,1
@@ -71,6 +75,7 @@ Charmander,151,Common,GIDORA,Fire,Non-Holo,1
 Delphox,Silver Tempest,Rare,Uta,Fire,Non-Holo,1
 Fennekin,Silver Tempest,Common,ryoma uratsuka,Fire,Non-Holo,3
 Growlithe,Fusion Strike,Common,Narumi Sato,Fire,Non-Holo,1
+Larvesta,Crown Zenith,Common,Tika Matsuno,Fire,Non-Holo,1
 Litleo,Evolving Skies,Common,Misa Tsutsui,Fire,Non-Holo,1
 Litten,Silver Tempest,Common,Narumi Sato,Fire,Non-Holo,1
 Litwick,Twilight Masquerade,Common,Saya Tsuruta,Fire,Non-Holo,1
@@ -106,6 +111,7 @@ Rhydon,Lost Origin,Uncommon,HYOGONOSUKE,Fighting,Reverse,1
 Toxicroak,Paldea Evolved,Uncommon,Yuya Oka,Fighting,Reverse,1
 Armaldo,Silver Tempest,Rare,Souichirou Gunjima,Fighting,Non-Holo,1
 Baltoy,Silver Tempest,Common,Yuka Morii,Fighting,Non-Holo,2
+Baltoy,Crown Zenith,Common,Nagomi Nijo,Fighting,Non-Holo,1
 Binacle,Lost Origin,Common,Scav,Fighting,Non-Holo,1
 Crabrawler,Stellar Crown,Common,Scav,Fighting,Non-Holo,1
 Cubone,Stellar Crown,Common,svlt,Fighting,Non-Holo,1
@@ -141,6 +147,8 @@ Rhydon,Stellar Crown,Common,Ryuta Fuse,Fighting,Non-Holo,1
 Rhyhorn,Stellar Crown,Common,kodama,Fighting,Non-Holo,1
 Riolu,Stellar Crown,Common,Souichirou Gunjima,Fighting,Non-Holo,2
 Rockruff,Paldea Evolved,Common,0313,Fighting,Non-Holo,1
+Rockruff,Crown Zenith,Common,OKACHEKE,Fighting,Non-Holo,1
+Solrock,Crown Zenith,Uncommon,OKACHEKE,Fighting,Non-Holo,1
 Timburr,Twilight Masquerade,Common,Kouki Saitou,Fighting,Non-Holo,1
 Noibat,Paldea Evolved,Common,chibi,Dragon,Reverse,1
 Altaria,Obsidian Flames,Uncommon,kurumitsu,Dragon,Non-Holo,1
@@ -167,6 +175,7 @@ Electabuzz,Stellar Crown,Common,Oswaldo KATO,Lightning,Non-Holo,1
 Electabuzz,151,Common,NC Empire,Lightning,Non-Holo,1
 Electrike,Lost Origin,Common,otumami,Lightning,Non-Holo,1
 Emolga,Silver Tempest,Common,sowsow,Lightning,Non-Holo,2
+Heliolisk,Crown Zenith,Rare,Akira Komayama,Lightning,Non-Holo,1
 Kilowattrel,Paldea Evolved,Uncommon,Pani Kobayashi,Lightning,Non-Holo,2
 Kilowattrel,McDonald's collection 2023,Uncommon,Kouki Saitou,Lightning,Non-Holo,1
 Lanturn,Silver Tempest,Uncommon,aoki,Lightning,Non-Holo,1
@@ -186,6 +195,7 @@ Pincurchin,Paldea Evolved,Common,Yuka Morii,Lightning,Non-Holo,1
 Plusle,Fusion Strike,Common,Megumi Higuchi,Lightning,Non-Holo,1
 Raichu,Paldea Evolved,Uncommon,Teeziro,Lightning,Non-Holo,1
 Shinx,Brilliant Stars,Common,Mizue,Lightning,Non-Holo,1
+Shinx,Crown Zenith,Common,Mina Nakai,Lightning,Non-Holo,1
 Stunfisk,Silver Tempest,Common,Shinji Kanda,Lightning,Non-Holo,2
 Vikavolt,Temporal Forces,Uncommon,Hitoshi Ariga,Lightning,Non-Holo,1
 Vikavolt,Stellar Crown,Uncommon,Shiburingaru,Lightning,Non-Holo,1
@@ -227,6 +237,7 @@ Lileep,Stellar Crown,Common,Ounishi,Grass,Non-Holo,2
 Lilligant,BREAKpoint,Rare,Shin Nagasawa,Grass,Non-Holo,1
 Lilligant,Evolving Skies,Rare,Kagemaru Himeno,Grass,Non-Holo,1
 Masquerain,Paradox Rift,Uncommon,kantaro,Grass,Non-Holo,1
+Oddish,Crown Zenith,Common,ryoma uratsuka,Grass,Non-Holo,1
 Petilil,Evolving Skies,Common,Mika Pikazo,Grass,Non-Holo,1
 Phantump,Obsidian Flames,Common,Narumi Sato,Grass,Non-Holo,1
 Roselia,Temporal Forces,Common,Tomomi Kaneko,Grass,Non-Holo,1
@@ -241,6 +252,7 @@ Shiftry,Temporal Forces,Uncommon,Souichirou Gunjima,Grass,Non-Holo,1
 Simisage,Fusion Strike,Uncommon,Akira Komayama,Grass,Non-Holo,1
 Steenee,Paradox Rift,Uncommon,Kariya,Grass,Non-Holo,1
 Sunkern,Silver Tempest,Common,Saya Tsuruta,Grass,Non-Holo,1
+Tangela,Crown Zenith,Common,kurumitsu,Grass,Non-Holo,1
 Toedscool,Scarlet & Violet,Common,Shin Nagasawa,Grass,Non-Holo,1
 Tropius,Paldea Evolved,Common,Taira Akitsu,Grass,Non-Holo,1
 Venomoth,Silver Tempest,Uncommon,Kagemaru Himeno,Grass,Non-Holo,1
@@ -280,7 +292,9 @@ Marill,Stellar Crown,Common,MARINA Chikazawa,Water,Non-Holo,1
 Marill,Paldea Evolved,Common,saino misaki,Water,Non-Holo,1
 Poliwag,Lost Origin,Common,Miki Tanaka,Water,Non-Holo,1
 Seel,Lost Origin,Common,GIDORA,Water,Non-Holo,1
+Seel,Crown Zenith,Common,Kagemaru Himeno,Water,Non-Holo,1
 Snorunt,Silver Tempest,Common,sui,Water,Non-Holo,1
+Snorunt,Crown Zenith,Common,otumami,Water,Non-Holo,1
 Snover,Lost Origin,Common,Mitsuhiro Arita,Water,Non-Holo,1
 Sobble,Chilling Reign,Common,Yuu Nishida,Water,Non-Holo,1
 Squirtle,151,Common,kantaro,Water,Non-Holo,1
@@ -317,6 +331,7 @@ Jigglypuff,Fusion Strike,Common,Saya Tsuruta,Psychic,Non-Holo,1
 Jynx,Lost Origin,Common,Nagomi Nijo,Psychic,Non-Holo,1
 Kirlia,Silver Tempest,Uncommon,Yukiko Baba,Psychic,Non-Holo,1
 Latias,Temporal Forces,Uncommon,Takumi Wada,Psychic,Non-Holo,1
+Lunatone,Crown Zenith,Uncommon,Narumi Sato,Psychic,Non-Holo,1
 Meditite,Silver Tempest,Common,Jiro Sasumo,Psychic,Non-Holo,1
 Mewtwo,Stellar Crown,Uncommon,kantaro,Psychic,Non-Holo,1
 Misdreavus,Paldea Evolved,Common,Megumi Higuchi,Psychic,Non-Holo,1
@@ -341,6 +356,7 @@ Bombirdier,Stellar Crown,Common,Aya Kusube,Darkness,Non-Holo,2
 Galarian Zigzagoon,Fusion Strike,Common,Eri Yamaki,Darkness,Non-Holo,1
 Gulpin,Stellar Crown,Common,Shimaris Yukichi,Darkness,Non-Holo,1
 Honchkrow,Silver Tempest,Uncommon,aoki,Darkness,Non-Holo,1
+Krokorok,Crown Zenith,Uncommon,Shin Nagasawa,Darkness,Non-Holo,1
 Mareanie,Silver Tempest,Common,Yuu Nishida,Darkness,Non-Holo,1
 Morgrem,Stellar Crown,Common,Mékayu,Darkness,Non-Holo,1
 Morpeko,Silver Tempest,Uncommon,nagimiso,Darkness,Non-Holo,1
@@ -386,10 +402,14 @@ Heavy Baton,Temporal Forces,Uncommon,Ayaka Yoshida,Pokemon Tool,Non-Holo,1
 Occa Berry,Stellar Crown,Uncommon,Studio Bora Inc.,Pokemon Tool,Non-Holo,1
 Echoing Horn,Chilling Reign,Uncommon,Studio Bora Inc.,Item,Non-Holo,2
 Emergency Jelly,Silver Tempest,Uncommon,AYUMI ODASHIMA,Item,Non-Holo,1
+Energy Switch,Crown Zenith,Uncommon,Toyste Beach,Item,Non-Holo,1
 Glass Trumpet,Stellar Crown,Uncommon,Toyste Beach,Item,Non-Holo,1
+Great Ball,Crown Zenith,Uncommon,Toyste Beach,Item,Non-Holo,1
 Leafy Camo Poncho,Silver Tempest,Uncommon,Studio Bora Inc.,Item,Non-Holo,1
+Lost Vacuum,Crown Zenith,Uncommon,Amelicart,Item,Non-Holo,1
 Lucky Ice Pop,Evolving Skies,Uncommon,inose yukie,Item,Non-Holo,1
 Mirage Gate,Lost Origin,Uncommon,sadaji,Item,Non-Holo,1
+Potion,Crown Zenith,Common,Ryo Ueda,Item,Non-Holo,1
 Snow Leaf Badge,Evolving Skies,Uncommon,Studio Bora Inc.,Item,Non-Holo,2
 Tool Box,Lost Origin,Uncommon,AYUMI ODASHIMA,Item,Non-Holo,2
 Windup Arm,Lost Origin,Uncommon,Toyste Beach,Item,Non-Holo,1
